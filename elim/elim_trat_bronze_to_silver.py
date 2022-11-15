@@ -1,88 +1,75 @@
 # TRATAMENTO DE DADOS - BRONZE TO SILVER
 # - padronizacao dos nomes das colunas
-# - tipagem de variaveis
+# - criacao de colunas faltantes
+# - tratamento simples e tipagem de colunas
 # - separacao de dataframes por escopo (classif e desclassif)
 # - ingestao na camada silver
 
-
+#%%
 # importando bibliotecas
 import pandas as pd
 
 
 # importando os dataframes da camada bronze
-df_conmebol = pd.read_csv('bronze/2022/df_conmebol.csv', sep=';')
-df_concacaf = pd.read_csv('bronze/2022/df_concacaf.csv', sep=';')
-df_uefa = pd.read_csv('bronze/2022/df_uefa.csv', sep=';')
-df_caf = pd.read_csv('bronze/2022/df_caf.csv', sep=';')
-df_afc = pd.read_csv('bronze/2022/df_afc.csv', sep=';')
+bronze_path = 'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/'
 
+df_conmebol_2022 = pd.read_csv(f'{bronze_path}2022/df_conmebol.csv', sep=';')
+df_concacaf_2022 = pd.read_csv(f'{bronze_path}2022/df_concacaf.csv', sep=';')
+df_uefa_2022 = pd.read_csv(f'{bronze_path}2022/df_uefa.csv', sep=';')
+df_caf_2022 = pd.read_csv(f'{bronze_path}2022/df_caf.csv', sep=';')
+df_afc_2022 = pd.read_csv(f'{bronze_path}2022/df_afc.csv', sep=';')
+
+df_conmebol_2018 = pd.read_csv(f'{bronze_path}2018/df_conmebol.csv', sep=';')
+df_concacaf_2018 = pd.read_csv(f'{bronze_path}2018/df_concacaf.csv', sep=';')
+df_uefa_2018 = pd.read_csv(f'{bronze_path}2018/df_uefa.csv', sep=';')
+df_caf_2018 = pd.read_csv(f'{bronze_path}2018/df_caf.csv', sep=';')
+df_afc_2018 = pd.read_csv(f'{bronze_path}2018/df_afc.csv', sep=';')
+
+df_conmebol_2014 = pd.read_csv(f'{bronze_path}2014/df_conmebol.csv', sep=';')
+df_concacaf_2014 = pd.read_csv(f'{bronze_path}2014/df_concacaf.csv', sep=';')
+df_uefa_2014 = pd.read_csv(f'{bronze_path}2014/df_uefa.csv', sep=';')
+df_caf_2014 = pd.read_csv(f'{bronze_path}2014/df_caf.csv', sep=';')
+df_afc_2014 = pd.read_csv(f'{bronze_path}2014/df_afc.csv', sep=';')
+
+df_conmebol_2010 = pd.read_csv(f'{bronze_path}2010/df_conmebol.csv', sep=';')
+df_concacaf_2010 = pd.read_csv(f'{bronze_path}2010/df_concacaf.csv', sep=';')
+df_uefa_2010 = pd.read_csv(f'{bronze_path}2010/df_uefa.csv', sep=';')
+df_caf_2010 = pd.read_csv(f'{bronze_path}2010/df_caf.csv', sep=';')
+df_afc_2010 = pd.read_csv(f'{bronze_path}2010/df_afc.csv', sep=';')
+df_ofc_2010 = pd.read_csv(f'{bronze_path}2010/df_ofc.csv', sep=';')
+
+df_conmebol_2006 = pd.read_csv(f'{bronze_path}2006/df_conmebol.csv', sep=';')
+df_concacaf_2006 = pd.read_csv(f'{bronze_path}2006/df_concacaf.csv', sep=';')
+df_uefa_2006 = pd.read_csv(f'{bronze_path}2006/df_uefa.csv', sep=';')
+df_caf_2006 = pd.read_csv(f'{bronze_path}2006/df_caf.csv', sep=';')
+df_afc_2006 = pd.read_csv(f'{bronze_path}2006/df_afc.csv', sep=';')
+df_ofc_2006 = pd.read_csv(f'{bronze_path}2006/df_ofc.csv', sep=';')
+
+
+# criando listas com os dataframes
+dfs_conmebol = [df_conmebol_2022, df_conmebol_2018, df_conmebol_2014, df_conmebol_2010, df_conmebol_2006]
+dfs_concacaf = [df_concacaf_2022, df_concacaf_2018, df_concacaf_2014, df_concacaf_2010, df_concacaf_2006]
+dfs_uefa = [df_uefa_2022, df_uefa_2018, df_uefa_2014, df_uefa_2010, df_uefa_2006]
+dfs_caf = [df_caf_2022, df_caf_2018, df_caf_2014, df_caf_2010, df_caf_2006]
+dfs_afc = [df_afc_2022, df_afc_2018, df_afc_2014, df_afc_2010, df_afc_2006]
+dfs_ofc = [df_ofc_2010, df_ofc_2006]
+
+dfs = dfs_conmebol + dfs_concacaf + dfs_uefa + dfs_caf + dfs_afc + dfs_ofc
+#%%
+dfs_conmebol
+#%%
 
 # padronizacao dos nomes das colunas
-df_conmebol['conf_cont'] = 'conmebol'
-df_conmebol.rename(columns={
+dict_rename = {
     'Pos':'pos_elim',
-    'Equipe':'selecao',
-    'Pts':'pts',
-    'J':'j',
-    'V':'v',
-    'E':'e',
-    'D':'d',
-    'GP':'gp',
-    'GC':'gc',
-    'SG':'sg',
-    'Classificação':'classif'
-}, inplace=True)
-
-df_concacaf['conf_cont'] = 'concacaf'
-df_concacaf.rename(columns={
     'Pos.':'pos_elim',
-    'vdeSeleção':'selecao',
-    'Pts':'pts',
-    'J':'j',
-    'V':'v',
-    'E':'e',
-    'D':'d',
-    'GP':'gp',
-    'GC':'gc',
-    'SG':'sg',
-    'Classificação':'classif'
-}, inplace=True)
-
-df_uefa['conf_cont'] = 'uefa'
-df_uefa.rename(columns={
-    'Pos':'pos_elim',
     'Equipe':'selecao',
-    'Pts':'pts',
-    'J':'j',
-    'V':'v',
-    'E':'e',
-    'D':'d',
-    'GP':'gp',
-    'GC':'gc',
-    'SG':'sg',
-    'Classificação':'classif'
-}, inplace=True)
-
-df_caf['conf_cont'] = 'caf'
-df_caf['classif'] = None
-df_caf.rename(columns={
-    'Pos.':'pos_elim',
     'vdeSeleção':'selecao',
+    'País':'selecao',
+    'Grupo A':'selecao',
+    'Grupo B':'selecao',
     'Pts':'pts',
-    'J':'j',
-    'V':'v',
-    'E':'e',
-    'D':'d',
-    'GP':'gp',
-    'GC':'gc',
-    'SG':'sg'
-}, inplace=True)
-
-df_afc['conf_cont'] = 'afc'
-df_afc.rename(columns={
-    'Pos':'pos_elim',
-    'Equipe':'selecao',
-    'Pts':'pts',
+    'Pts.':'pts',
     'J':'j',
     'V':'v',
     'E':'e',
@@ -91,9 +78,32 @@ df_afc.rename(columns={
     'GC':'gc',
     'SG':'sg',
     'Classificação':'classif'
-}, inplace=True)
+}
 
+for df in dfs:
+    df.rename(columns=dict_rename, inplace=True)
 
+#%%
+# criando a coluna de confederacao continental
+for df in dfs_conmebol:
+    df['conf_cont'] = 'conmebol'
+
+for df in dfs_concacaf:
+    df['conf_cont'] = 'concacaf'
+
+for df in dfs_uefa:
+    df['conf_cont'] = 'uefa'
+
+for df in dfs_caf:
+    df['conf_cont'] = 'caf'
+
+for df in dfs_afc:
+    df['conf_cont'] = 'afc'
+
+for df in dfs_ofc:
+    df['conf_cont'] = 'ofc'
+
+#%%
 # tipagem de variaveis
 df_conmebol['sg'] = df_conmebol['sg'].replace('−', '-', regex=True).astype(int)
 df_concacaf['sg'] = df_concacaf['sg'].replace('–', '-', regex=True).astype(int)
