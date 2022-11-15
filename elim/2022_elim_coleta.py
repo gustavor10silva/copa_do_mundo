@@ -70,5 +70,3 @@ for i in range(2):
     df_afc_partial = df_afc_full.loc[:, 'Pos':'Classificação']
     df_afc = pd.concat([df_afc, df_afc_partial])
 df_afc.to_csv('bronze/2022/df_afc.csv', sep=';', index=False)
-
-
