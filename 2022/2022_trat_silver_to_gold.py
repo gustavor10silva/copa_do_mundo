@@ -7,6 +7,7 @@
 
 # importando bibliotecas
 import pandas as pd
+from unidecode import unidecode
 
 
 # importando os dataframes da camada silver
@@ -48,11 +49,19 @@ df_classif = pd.concat([df_conmebol_classif, df_concacaf_classif, df_uefa_classi
 df_classif
 
 
+# padronizando os nomes das selecoes
+df_classif['selecao'] = df_classif['selecao'].apply(unidecode)
+df_classif['selecao'] = df_classif['selecao'].str.lower()
+df_classif['selecao'] = df_classif['selecao'].str.strip()
+df_classif['selecao'] = df_classif['selecao'].str.replace(' ', '_')
+df_classif['selecao'] = df_classif['selecao'].str.replace('paises_baixos', 'holanda')
+
+
 # criando as ultimas colunas necessarias
 df_classif['aprov'] = round(df_classif['pts'] / (df_classif['j']*3), 2)
 df_classif['perc_v'] = round(df_classif['v'] / df_classif['j'], 2)
 
-selecoes_classif_repescagem = ['Austrália', 'País de Gales', 'Costa Rica']
+selecoes_classif_repescagem = ['australia', 'pais_de_gales', 'costa_rica']
 df_classif.loc[df_classif['selecao'].isin(selecoes_classif_repescagem),'classif'] = 'repescagem'
 df_classif.loc[~df_classif['selecao'].isin(selecoes_classif_repescagem),'classif'] = 'direta'
 
@@ -61,8 +70,8 @@ df_classif['gc_por_jogo'] = round(df_classif['gc'] / df_classif['j'], 2)
 df_classif['sg_por_jogo'] = round(df_classif['sg'] / df_classif['j'], 2)
 
 df_classif['sede'] = None
-df_classif.loc[df_classif['selecao'] == 'Qatar','sede'] = 1
-df_classif.loc[df_classif['selecao'] != 'Qatar','sede'] = 0
+df_classif.loc[df_classif['selecao'] == 'qatar','sede'] = 1
+df_classif.loc[df_classif['selecao'] != 'qatar','sede'] = 0
 
 for col in df_classif.columns:
     try:
