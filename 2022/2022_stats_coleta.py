@@ -78,7 +78,7 @@ for selecao in cod_selecoes_classificadas:
             table_stats = bs_stats.find('table', attrs={'class':'table table-striped table-players'})
             df_stats_selecao_page = pd.read_html(str(table_stats))[0]
             df_stats_selecao_page = df_stats_selecao_page.loc[:,'GER-POT':'Idade']
-            df_stats_selecao_page['ano'] = ano
+            df_stats_selecao_page['ano'] = 2022
             df_stats_selecao_page['page'] = page
             df_stats_selecao_page['selecao'] = selecao
             df_stats_selecao = pd.concat([df_stats_selecao, df_stats_selecao_page])
