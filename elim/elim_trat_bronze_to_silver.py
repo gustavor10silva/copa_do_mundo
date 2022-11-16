@@ -8,6 +8,7 @@
 #%%
 # importando bibliotecas
 import pandas as pd
+from unidecode import unidecode
 
 
 # importando os dataframes da camada bronze
@@ -55,16 +56,16 @@ dfs_afc = [df_afc_2022, df_afc_2018, df_afc_2014, df_afc_2010, df_afc_2006]
 dfs_ofc = [df_ofc_2010, df_ofc_2006]
 
 dfs = dfs_conmebol + dfs_concacaf + dfs_uefa + dfs_caf + dfs_afc + dfs_ofc
-#%%
-dfs_conmebol
-#%%
 
-# padronizacao dos nomes das colunas
+#%%
+# padronizando os nomes das colunas
 dict_rename = {
+    'P':'pos_elim',
     'Pos':'pos_elim',
     'Pos.':'pos_elim',
     'Equipe':'selecao',
     'vdeSeleção':'selecao',
+    'Seleção':'selecao',
     'País':'selecao',
     'Grupo A':'selecao',
     'Grupo B':'selecao',
@@ -104,25 +105,69 @@ for df in dfs_ofc:
     df['conf_cont'] = 'ofc'
 
 #%%
-# tipagem de variaveis
-df_conmebol['sg'] = df_conmebol['sg'].replace('−', '-', regex=True).astype(int)
-df_concacaf['sg'] = df_concacaf['sg'].replace('–', '-', regex=True).astype(int)
-df_uefa['sg'] = df_uefa['sg'].replace('−', '-', regex=True).astype(int)
-df_caf['sg'] = df_caf['sg'].replace('–', '-', regex=True).astype(int)
-df_afc['sg'] = df_afc['sg'].replace('−', '-', regex=True).astype(int)
+# tratamento simples e tipagem das colunas
+for df in dfs:
+    df['pos_elim'] = df['pos_elim'].replace('°', '', regex=True)
+
+    df['selecao'] = df['selecao'].apply(unidecode)
+    df['selecao'] = df['selecao'].str.lower()
+    df['selecao'] = df['selecao'].str.replace('\*', '', regex=True)
+    df['selecao'] = df['selecao'].str.strip()
+    df['selecao'] = df['selecao'].str.replace(' ', '_')
+    df['selecao'] = df['selecao'].str.replace('paises_baixos', 'holanda')
+
+    if 'sg' not in df.columns:
+        df['sg'] = df['gp'] - df['gc']
+    
+    df['sg'] = df['sg'].replace('\+', '', regex=True)
+    df['sg'] = df['sg'].replace('−', '-', regex=True)
+    df['sg'] = df['sg'].replace('–', '-', regex=True)
+
+    if 'classif' in df.columns:
+        df.drop(columns=['classif'], inplace=True)
+
+    for col in ['pos_elim', 'pts', 'j', 'v', 'e', 'd', 'gp', 'gc', 'sg']:
+        df[col] = df[col].astype(int)
 
 
+#%%
 # separacao de dataframes por escopo (classif e desclassif)
-selecoes_classificadas = [
-    'Qatar', 'Equador', 'Senegal', 'Países Baixos',
-    'Inglaterra', 'Irã', 'Estados Unidos', 'País de Gales',
-    'Argentina', 'Arábia Saudita', 'México', 'Polónia',
-    'França', 'Austrália', 'Dinamarca', 'Tunísia',
-    'Espanha', 'Costa Rica', 'Alemanha', 'Japão',
-    'Bélgica', 'Canadá', 'Marrocos', 'Croácia',
-    'Brasil', 'Sérvia', 'Suíça', 'Camarões',
-    'Portugal', 'Gana', 'Uruguai', 'Coreia do Sul']
+selecoes_classif_2022 = [
+    'qatar', 'equador', 'senegal', 'holanda', 'inglaterra', 'ira', 'estados_unidos', 'pais_de_gales',
+    'argentina', 'arabia_saudita', 'mexico', 'polonia', 'franca', 'australia', 'dinamarca', 'tunisia',
+    'espanha', 'costa_rica', 'alemanha', 'japao', 'belgica', 'canada', 'marrocos', 'croacia',
+    'brasil', 'servia', 'suica', 'camaroes', 'portugal', 'gana', 'uruguai', 'coreia_do_sul'
+    ]
 
+selecoes_classif_2018 = [
+    'russia', 'alemanha', 'brasil', 'portugal', 'argentina', 'belgica', 'polonia', 'franca',
+    'espanha', 'peru', 'suica', 'inglaterra', 'colombia', 'mexico', 'uruguai', 'croacia',
+    'dinamarca', 'islandia', 'costa_rica', 'suecia', 'tunisia', 'egito', 'senegal', 'ira',
+    'servia', 'nigeria', 'australia', 'japao', 'marrocos', 'panama', 'coreia_do_sul', 'arabia_saudita'
+]
+
+selecoes_classif_2014 = [
+    'brasil', 'argentina', 'colombia', 'chile', 'equador', 'uruguai', 'estados_unidos', 'costa_rica', 
+    'honduras', 'mexico', 'coreia_do_sul', 'japao', 'ira', 'australia', 'nigeria', 'costa_do_marfim',
+    'camaroes', 'gana', 'argelia','italia', 'espanha', 'belgica', 'holanda', 'inglaterra', 'alemanha',
+    'russia', 'suica', 'bosnia', 'franca', 'portugal','grecia', 'croacia'
+]
+
+selecoes_classif_2010 = [
+    'uruguai', 'argentina', 'estados_unidos', 'alemanha', 'mexico', 'coreia_do_sul', 'inglaterra', 'gana',
+    'africa_do_sul', 'grecia', 'eslovenia', 'australia', 'franca', 'nigeria', 'argelia', 'servia',
+    'holanda', 'paraguai', 'brasil', 'espanha', 'dinamarca', 'eslovaquia', 'portugal', 'chile',
+    'japao', 'nova_zelandia', 'costa_do_marfim', 'suica', 'camaroes', 'italia', 'coreia_do_norte', 'honduras'
+]
+
+selecoes_classif_2006 = [
+    'alemanha', 'inglaterra', 'argentina', 'portugal', 'equador', 'suecia', 'holanda', 'mexico',
+    'polonia', 'paraguai', 'costa_do_marfim', 'angola', 'costa_rica', 'trinidad_e_tobago', 'servia_e_montenegro',
+    'ira', 'italia', 'brasil', 'suica', 'espanha', 'gana', 'australia', 'franca', 'ucrania', 'republica_tcheca',
+    'croacia', 'coreia_do_sul', 'tunisia','estados_unidos', 'japao', 'togo', 'arabia_saudita'
+]
+
+#%%
 df_conmebol_desclassif = df_conmebol[~df_conmebol['selecao'].isin(selecoes_classificadas)]
 df_conmebol_classif = df_conmebol[df_conmebol['selecao'].isin(selecoes_classificadas)]
 
@@ -174,3 +219,4 @@ df_concacaf_desclassif.to_csv('silver/2022/df_concacaf_desclassif.csv', sep=';',
 df_uefa_desclassif.to_csv('silver/2022/df_uefa_desclassif.csv', sep=';', index=False)
 df_caf_desclassif.to_csv('silver/2022/df_caf_desclassif.csv', sep=';', index=False)
 df_afc_desclassif.to_csv('silver/2022/df_afc_desclassif.csv', sep=';', index=False)
+# %%

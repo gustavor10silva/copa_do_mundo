@@ -29,6 +29,7 @@ bs_concacaf = bs(req_concacaf.text, features="lxml")
 table_concacaf = bs_concacaf.find_all('table', attrs={'class':'wikitable', 'style':'text-align: center;'})[9]
 df_concacaf_full = pd.read_html(str(table_concacaf))[0]
 df_concacaf = df_concacaf_full.loc[:,'Seleção':'SG']
+df_concacaf.insert(0, 'Pos', range(1, df_concacaf.shape[0] + 1))
 df_concacaf.to_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/2014/df_concacaf.csv', sep=';', index=False)
 
 
