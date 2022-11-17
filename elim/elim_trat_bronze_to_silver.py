@@ -325,23 +325,23 @@ df_ofc_2006_classif.to_csv(f'{silver_path}2006/df_ofc_2006_classif.csv', sep=';'
 
 
 # salvando os dataframes das selecoes desclassificadas
-df_conmebol_2022_classif.to_csv(f'{silver_path}2022/df_conmebol_2022_classif.csv', sep=';', index=False)
-df_concacaf_2022_classif.to_csv(f'{silver_path}2022/df_concacaf_2022_classif.csv', sep=';', index=False)
-df_uefa_2022_classif.to_csv(f'{silver_path}2022/df_uefa_2022_classif.csv', sep=';', index=False)
-df_caf_2022_classif.to_csv(f'{silver_path}2022/df_caf_2022_classif.csv', sep=';', index=False)
-df_afc_2022_classif.to_csv(f'{silver_path}2022/df_afc_2022_classif.csv', sep=';', index=False)
+df_conmebol_2022_desclassif.to_csv(f'{silver_path}2022/df_conmebol_2022_desclassif.csv', sep=';', index=False)
+df_concacaf_2022_desclassif.to_csv(f'{silver_path}2022/df_concacaf_2022_desclassif.csv', sep=';', index=False)
+df_uefa_2022_desclassif.to_csv(f'{silver_path}2022/df_uefa_2022_desclassif.csv', sep=';', index=False)
+df_caf_2022_desclassif.to_csv(f'{silver_path}2022/df_caf_2022_desclassif.csv', sep=';', index=False)
+df_afc_2022_desclassif.to_csv(f'{silver_path}2022/df_afc_2022_desclassif.csv', sep=';', index=False)
 
-df_conmebol_2018_classif.to_csv(f'{silver_path}2018/df_conmebol_2018_classif.csv', sep=';', index=False)
-df_concacaf_2018_classif.to_csv(f'{silver_path}2018/df_concacaf_2018_classif.csv', sep=';', index=False)
-df_uefa_2018_classif.to_csv(f'{silver_path}2018/df_uefa_2018_classif.csv', sep=';', index=False)
-df_caf_2018_classif.to_csv(f'{silver_path}2018/df_caf_2018_classif.csv', sep=';', index=False)
-df_afc_2018_classif.to_csv(f'{silver_path}2018/df_afc_2018_classif.csv', sep=';', index=False)
+df_conmebol_2018_desclassif.to_csv(f'{silver_path}2018/df_conmebol_2018_desclassif.csv', sep=';', index=False)
+df_concacaf_2018_desclassif.to_csv(f'{silver_path}2018/df_concacaf_2018_desclassif.csv', sep=';', index=False)
+df_uefa_2018_desclassif.to_csv(f'{silver_path}2018/df_uefa_2018_desclassif.csv', sep=';', index=False)
+df_caf_2018_desclassif.to_csv(f'{silver_path}2018/df_caf_2018_desclassif.csv', sep=';', index=False)
+df_afc_2018_desclassif.to_csv(f'{silver_path}2018/df_afc_2018_desclassif.csv', sep=';', index=False)
 
-df_conmebol_2014_classif.to_csv(f'{silver_path}2014/df_conmebol_2014_classif.csv', sep=';', index=False)
-df_concacaf_2014_classif.to_csv(f'{silver_path}2014/df_concacaf_2014_classif.csv', sep=';', index=False)
-df_uefa_2014_classif.to_csv(f'{silver_path}2014/df_uefa_2014_classif.csv', sep=';', index=False)
-df_caf_2014_classif.to_csv(f'{silver_path}2014/df_caf_2014_classif.csv', sep=';', index=False)
-df_afc_2014_classif.to_csv(f'{silver_path}2014/df_afc_2014_classif.csv', sep=';', index=False)
+df_conmebol_2014_desclassif.to_csv(f'{silver_path}2014/df_conmebol_2014_desclassif.csv', sep=';', index=False)
+df_concacaf_2014_desclassif.to_csv(f'{silver_path}2014/df_concacaf_2014_desclassif.csv', sep=';', index=False)
+df_uefa_2014_desclassif.to_csv(f'{silver_path}2014/df_uefa_2014_desclassif.csv', sep=';', index=False)
+df_caf_2014_desclassif.to_csv(f'{silver_path}2014/df_caf_2014_desclassif.csv', sep=';', index=False)
+df_afc_2014_desclassif.to_csv(f'{silver_path}2014/df_afc_2014_desclassif.csv', sep=';', index=False)
 
 df_conmebol_2010_desclassif.to_csv(f'{silver_path}2010/df_conmebol_2010_desclassif.csv', sep=';', index=False)
 df_concacaf_2010_desclassif.to_csv(f'{silver_path}2010/df_concacaf_2010_desclassif.csv', sep=';', index=False)
