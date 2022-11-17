@@ -1,4 +1,3 @@
-#%%
 # importando bibliotecas
 import requests
 import pandas as pd
@@ -16,12 +15,8 @@ ano = 'fifa19_353/'
 url_extrair_codigo = f'https://www.fifaindex.com/pt-br/players/{ano}?page=1&gender=0&order=desc'
 req = requests.get(url_extrair_codigo)
 bs_req = bs(req.text, features="lxml")
-lista = bs_req.find_all('table', attrs={'class':'table table-striped table-players'})[0]
-df_req = pd.read_html(str(lista))[0]
+lista = bs_req.find_all('select', attrs={'name':'nationality', 'placeholder':'Select Option'})[0]
 
-#%%
-
-#%%
 df_cod_selecoes = pd.DataFrame(columns=['cod', 'selecao'])
 lista_codigos = []
 lista_selecoes = []
@@ -49,25 +44,12 @@ selecoes_esquecidas = [selecao if selecao not in list(df_cod_selecoes['selecao']
 selecoes_esquecidas.value_counts()
 """
 
-
 # marcando as selecoes classificadas para cada copa do mundo
-df_cod_selecoes['copa_2022'] = [1 if selecao in selecoes_classificadas else 0 for selecao in df_cod_selecoes['selecao']]
-cod_selecoes_classificadas = list(df_cod_selecoes[df_cod_selecoes['copa_2022'] == 1]['cod'])
+df_cod_selecoes['copa_2018'] = [1 if selecao in selecoes_classificadas else 0 for selecao in df_cod_selecoes['selecao']]
+cod_selecoes_classificadas = list(df_cod_selecoes[df_cod_selecoes['copa_2018'] == 1]['cod'])
 
 
 # extraindo as tabelas com o beautiful soup
-"""
-https://www.fifaindex.com/pt-br/players/fifa22_555/?page=5&gender=0&nationality=54&order=desc
-ano_fifa = {
-    'ano' : ['2023', '2019', '2015', '2011', '2007'],
-    'param_url' : ['', 'fifa19_353/', 'fifa15_14/', 'fifa11_7/', 'fifa07_3/']
-}
-df_ano_fifa = pd.DataFrame(ano_fifa)
-df_ano_fifa
-
-for i in range(df_ano_fifa.shape[0]):
-ano = df_ano_fifa['param_url'][i]
-"""
 contador = 0
 df_stats = pd.DataFrame(columns=['GER-POT', 'Nome', 'Posições Preferidas', 'Idade', 'ano', 'page', 'selecao'])
 for selecao in cod_selecoes_classificadas:
@@ -84,13 +66,13 @@ for selecao in cod_selecoes_classificadas:
             table_stats = bs_stats.find('table', attrs={'class':'table table-striped table-players'})
             df_stats_selecao_page = pd.read_html(str(table_stats))[0]
             df_stats_selecao_page = df_stats_selecao_page.loc[:,'GER-POT':'Idade']
-            df_stats_selecao_page['ano'] = 2022
+            df_stats_selecao_page['ano'] = 2018
             df_stats_selecao_page['page'] = page
             df_stats_selecao_page['selecao'] = selecao
-            df_stats_selecao = pd.concat([df_stats_selecao, df_stats_selecao_page])
+            df_stats_selecao = pd.concat([df_stats_selecao, df_stats_selecao_page], ignore_index=True)
         except:
             pass
     
-    df_stats = pd.concat([df_stats, df_stats_selecao])
+    df_stats = pd.concat([df_stats, df_stats_selecao], ignore_index=True)
 
-df_stats.to_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/2022/df_stats.csv', sep=';', index=False)
+df_stats.to_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/2018/df_stats.csv', sep=';', index=False)
