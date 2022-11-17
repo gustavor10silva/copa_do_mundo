@@ -5,7 +5,7 @@
 # - separacao de dataframes por escopo (classif e desclassif)
 # - ingestao na camada silver
 
-#%%
+
 # importando bibliotecas
 import pandas as pd
 from unidecode import unidecode
@@ -57,7 +57,7 @@ dfs_ofc = [df_ofc_2010, df_ofc_2006]
 
 dfs = dfs_conmebol + dfs_concacaf + dfs_uefa + dfs_caf + dfs_afc + dfs_ofc
 
-#%%
+
 # padronizando os nomes das colunas
 dict_rename = {
     'P':'pos_elim',
@@ -84,7 +84,7 @@ dict_rename = {
 for df in dfs:
     df.rename(columns=dict_rename, inplace=True)
 
-#%%
+
 # criando a coluna de confederacao continental
 for df in dfs_conmebol:
     df['conf_cont'] = 'conmebol'
@@ -104,7 +104,7 @@ for df in dfs_afc:
 for df in dfs_ofc:
     df['conf_cont'] = 'ofc'
 
-#%%
+
 # tratamento simples e tipagem das colunas
 for df in dfs:
     df['pos_elim'] = df['pos_elim'].replace('°', '', regex=True)
@@ -115,6 +115,7 @@ for df in dfs:
     df['selecao'] = df['selecao'].str.strip()
     df['selecao'] = df['selecao'].str.replace(' ', '_')
     df['selecao'] = df['selecao'].str.replace('paises_baixos', 'holanda')
+    df['selecao'] = df['selecao'].str.replace('chequia', 'republica_tcheca')
 
     if 'sg' not in df.columns:
         df['sg'] = df['gp'] - df['gc']
@@ -130,7 +131,6 @@ for df in dfs:
         df[col] = df[col].astype(int)
 
 
-#%%
 # separacao de dataframes por escopo (classif e desclassif)
 selecoes_classif_2022 = [
     'qatar', 'equador', 'senegal', 'holanda', 'inglaterra', 'ira', 'estados_unidos', 'pais_de_gales',
@@ -138,85 +138,221 @@ selecoes_classif_2022 = [
     'espanha', 'costa_rica', 'alemanha', 'japao', 'belgica', 'canada', 'marrocos', 'croacia',
     'brasil', 'servia', 'suica', 'camaroes', 'portugal', 'gana', 'uruguai', 'coreia_do_sul'
     ]
-
 selecoes_classif_2018 = [
     'russia', 'alemanha', 'brasil', 'portugal', 'argentina', 'belgica', 'polonia', 'franca',
     'espanha', 'peru', 'suica', 'inglaterra', 'colombia', 'mexico', 'uruguai', 'croacia',
     'dinamarca', 'islandia', 'costa_rica', 'suecia', 'tunisia', 'egito', 'senegal', 'ira',
     'servia', 'nigeria', 'australia', 'japao', 'marrocos', 'panama', 'coreia_do_sul', 'arabia_saudita'
 ]
-
 selecoes_classif_2014 = [
     'brasil', 'argentina', 'colombia', 'chile', 'equador', 'uruguai', 'estados_unidos', 'costa_rica', 
     'honduras', 'mexico', 'coreia_do_sul', 'japao', 'ira', 'australia', 'nigeria', 'costa_do_marfim',
     'camaroes', 'gana', 'argelia','italia', 'espanha', 'belgica', 'holanda', 'inglaterra', 'alemanha',
-    'russia', 'suica', 'bosnia', 'franca', 'portugal','grecia', 'croacia'
+    'russia', 'suica', 'bosnia_e_herzegovina', 'franca', 'portugal','grecia', 'croacia'
 ]
-
 selecoes_classif_2010 = [
     'uruguai', 'argentina', 'estados_unidos', 'alemanha', 'mexico', 'coreia_do_sul', 'inglaterra', 'gana',
     'africa_do_sul', 'grecia', 'eslovenia', 'australia', 'franca', 'nigeria', 'argelia', 'servia',
     'holanda', 'paraguai', 'brasil', 'espanha', 'dinamarca', 'eslovaquia', 'portugal', 'chile',
     'japao', 'nova_zelandia', 'costa_do_marfim', 'suica', 'camaroes', 'italia', 'coreia_do_norte', 'honduras'
 ]
-
 selecoes_classif_2006 = [
     'alemanha', 'inglaterra', 'argentina', 'portugal', 'equador', 'suecia', 'holanda', 'mexico',
-    'polonia', 'paraguai', 'costa_do_marfim', 'angola', 'costa_rica', 'trinidad_e_tobago', 'servia_e_montenegro',
+    'polonia', 'paraguai', 'costa_do_marfim', 'angola', 'costa_rica', 'trindade_e_tobago', 'servia_e_montenegro',
     'ira', 'italia', 'brasil', 'suica', 'espanha', 'gana', 'australia', 'franca', 'ucrania', 'republica_tcheca',
     'croacia', 'coreia_do_sul', 'tunisia','estados_unidos', 'japao', 'togo', 'arabia_saudita'
 ]
 
-#%%
-df_conmebol_desclassif = df_conmebol[~df_conmebol['selecao'].isin(selecoes_classificadas)]
-df_conmebol_classif = df_conmebol[df_conmebol['selecao'].isin(selecoes_classificadas)]
 
-df_concacaf_desclassif = df_concacaf[~df_concacaf['selecao'].isin(selecoes_classificadas)]
-df_concacaf_classif = df_concacaf[df_concacaf['selecao'].isin(selecoes_classificadas)]
+# dataframes das selecoes classificadas
+df_conmebol_2022_classif = df_conmebol_2022[df_conmebol_2022['selecao'].isin(selecoes_classif_2022)]
+df_concacaf_2022_classif = df_concacaf_2022[df_concacaf_2022['selecao'].isin(selecoes_classif_2022)]
+df_uefa_2022_classif = df_uefa_2022[df_uefa_2022['selecao'].isin(selecoes_classif_2022)]
+df_caf_2022_classif = df_caf_2022[df_caf_2022['selecao'].isin(selecoes_classif_2022)]
+df_afc_2022_classif = df_afc_2022[df_afc_2022['selecao'].isin(selecoes_classif_2022)]
 
-df_uefa_desclassif = df_uefa[~df_uefa['selecao'].isin(selecoes_classificadas)]
-df_uefa_classif = df_uefa[df_uefa['selecao'].isin(selecoes_classificadas)]
+df_conmebol_2018_classif = df_conmebol_2018[df_conmebol_2018['selecao'].isin(selecoes_classif_2018)]
+df_concacaf_2018_classif = df_concacaf_2018[df_concacaf_2018['selecao'].isin(selecoes_classif_2018)]
+df_uefa_2018_classif = df_uefa_2018[df_uefa_2018['selecao'].isin(selecoes_classif_2018)]
+df_caf_2018_classif = df_caf_2018[df_caf_2018['selecao'].isin(selecoes_classif_2018)]
+df_afc_2018_classif = df_afc_2018[df_afc_2018['selecao'].isin(selecoes_classif_2018)]
 
-df_caf_desclassif = df_caf[~df_caf['selecao'].isin(selecoes_classificadas)]
-df_caf_classif = df_caf[df_caf['selecao'].isin(selecoes_classificadas)]
+df_conmebol_2014_classif = df_conmebol_2014[df_conmebol_2014['selecao'].isin(selecoes_classif_2014)]
+df_concacaf_2014_classif = df_concacaf_2014[df_concacaf_2014['selecao'].isin(selecoes_classif_2014)]
+df_uefa_2014_classif = df_uefa_2014[df_uefa_2014['selecao'].isin(selecoes_classif_2014)]
+df_caf_2014_classif = df_caf_2014[df_caf_2014['selecao'].isin(selecoes_classif_2014)]
+df_afc_2014_classif = df_afc_2014[df_afc_2014['selecao'].isin(selecoes_classif_2014)]
 
-df_afc_desclassif = df_afc[~df_afc['selecao'].isin(selecoes_classificadas)]
-df_afc_classif = df_afc[df_afc['selecao'].isin(selecoes_classificadas)]
-list_qatar = [None, 'Qatar'] + [None]*(df_afc_classif.shape[1]-2)
-df_afc_classif.loc[len(df_afc_classif)] = list_qatar
+df_conmebol_2010_classif = df_conmebol_2010[df_conmebol_2010['selecao'].isin(selecoes_classif_2010)]
+df_concacaf_2010_classif = df_concacaf_2010[df_concacaf_2010['selecao'].isin(selecoes_classif_2010)]
+df_uefa_2010_classif = df_uefa_2010[df_uefa_2010['selecao'].isin(selecoes_classif_2010)]
+df_caf_2010_classif = df_caf_2010[df_caf_2010['selecao'].isin(selecoes_classif_2010)]
+df_afc_2010_classif = df_afc_2010[df_afc_2010['selecao'].isin(selecoes_classif_2010)]
+df_ofc_2010_classif = df_ofc_2010[df_ofc_2010['selecao'].isin(selecoes_classif_2010)]
+
+df_conmebol_2006_classif = df_conmebol_2006[df_conmebol_2006['selecao'].isin(selecoes_classif_2006)]
+df_concacaf_2006_classif = df_concacaf_2006[df_concacaf_2006['selecao'].isin(selecoes_classif_2006)]
+df_uefa_2006_classif = df_uefa_2006[df_uefa_2006['selecao'].isin(selecoes_classif_2006)]
+df_caf_2006_classif = df_caf_2006[df_caf_2006['selecao'].isin(selecoes_classif_2006)]
+df_afc_2006_classif = df_afc_2006[df_afc_2006['selecao'].isin(selecoes_classif_2006)]
+df_ofc_2006_classif = df_ofc_2006[df_ofc_2006['selecao'].isin(selecoes_classif_2006)]
+
+
+# dataframes das selecoes desclassificadas
+df_conmebol_2022_desclassif = df_conmebol_2022[~df_conmebol_2022['selecao'].isin(selecoes_classif_2022)]
+df_concacaf_2022_desclassif = df_concacaf_2022[~df_concacaf_2022['selecao'].isin(selecoes_classif_2022)]
+df_uefa_2022_desclassif = df_uefa_2022[~df_uefa_2022['selecao'].isin(selecoes_classif_2022)]
+df_caf_2022_desclassif = df_caf_2022[~df_caf_2022['selecao'].isin(selecoes_classif_2022)]
+df_afc_2022_desclassif = df_afc_2022[~df_afc_2022['selecao'].isin(selecoes_classif_2022)]
+
+df_conmebol_2018_desclassif = df_conmebol_2018[~df_conmebol_2018['selecao'].isin(selecoes_classif_2018)]
+df_concacaf_2018_desclassif = df_concacaf_2018[~df_concacaf_2018['selecao'].isin(selecoes_classif_2018)]
+df_uefa_2018_desclassif = df_uefa_2018[~df_uefa_2018['selecao'].isin(selecoes_classif_2018)]
+df_caf_2018_desclassif = df_caf_2018[~df_caf_2018['selecao'].isin(selecoes_classif_2018)]
+df_afc_2018_desclassif = df_afc_2018[~df_afc_2018['selecao'].isin(selecoes_classif_2018)]
+
+df_conmebol_2014_desclassif = df_conmebol_2014[~df_conmebol_2014['selecao'].isin(selecoes_classif_2014)]
+df_concacaf_2014_desclassif = df_concacaf_2014[~df_concacaf_2014['selecao'].isin(selecoes_classif_2014)]
+df_uefa_2014_desclassif = df_uefa_2014[~df_uefa_2014['selecao'].isin(selecoes_classif_2014)]
+df_caf_2014_desclassif = df_caf_2014[~df_caf_2014['selecao'].isin(selecoes_classif_2014)]
+df_afc_2014_desclassif = df_afc_2014[~df_afc_2014['selecao'].isin(selecoes_classif_2014)]
+
+df_conmebol_2010_desclassif = df_conmebol_2010[~df_conmebol_2010['selecao'].isin(selecoes_classif_2010)]
+df_concacaf_2010_desclassif = df_concacaf_2010[~df_concacaf_2010['selecao'].isin(selecoes_classif_2010)]
+df_uefa_2010_desclassif = df_uefa_2010[~df_uefa_2010['selecao'].isin(selecoes_classif_2010)]
+df_caf_2010_desclassif = df_caf_2010[~df_caf_2010['selecao'].isin(selecoes_classif_2010)]
+df_afc_2010_desclassif = df_afc_2010[~df_afc_2010['selecao'].isin(selecoes_classif_2010)]
+df_ofc_2010_desclassif = df_ofc_2010[~df_ofc_2010['selecao'].isin(selecoes_classif_2010)]
+
+df_conmebol_2006_desclassif = df_conmebol_2006[~df_conmebol_2006['selecao'].isin(selecoes_classif_2006)]
+df_concacaf_2006_desclassif = df_concacaf_2006[~df_concacaf_2006['selecao'].isin(selecoes_classif_2006)]
+df_uefa_2006_desclassif = df_uefa_2006[~df_uefa_2006['selecao'].isin(selecoes_classif_2006)]
+df_caf_2006_desclassif = df_caf_2006[~df_caf_2006['selecao'].isin(selecoes_classif_2006)]
+df_afc_2006_desclassif = df_afc_2006[~df_afc_2006['selecao'].isin(selecoes_classif_2006)]
+df_ofc_2006_desclassif = df_ofc_2006[~df_ofc_2006['selecao'].isin(selecoes_classif_2006)]
+
+
+# adicionando o pais sede da copa
+df_afc_2022_classif.reset_index(drop=True, inplace=True)
+df_afc_2022_classif.loc[len(df_afc_2022_classif)] = None
+df_afc_2022_classif['selecao'].loc[df_afc_2022_classif.shape[0] - 1]  = 'qatar'
+df_afc_2022_classif['conf_cont'].loc[df_afc_2022_classif.shape[0] - 1] = 'afc'
+
+df_uefa_2018_classif.reset_index(drop=True, inplace=True)
+df_uefa_2018_classif.loc[len(df_uefa_2018_classif)] = None
+df_uefa_2018_classif['selecao'].loc[df_uefa_2018_classif.shape[0] - 1]  = 'russia'
+df_uefa_2018_classif['conf_cont'].loc[df_uefa_2018_classif.shape[0] - 1] = 'uefa'
+
+df_conmebol_2014_classif.reset_index(drop=True, inplace=True)
+df_conmebol_2014_classif.loc[len(df_conmebol_2014_classif)] = None
+df_conmebol_2014_classif['selecao'].loc[df_conmebol_2014_classif.shape[0] - 1]  = 'brasil'
+df_conmebol_2014_classif['conf_cont'].loc[df_conmebol_2014_classif.shape[0] - 1] = 'conmebol'
+
+df_caf_2010_classif.reset_index(drop=True, inplace=True)
+df_caf_2010_classif.loc[len(df_caf_2010_classif)] = None
+df_caf_2010_classif['selecao'].loc[df_caf_2010_classif.shape[0] - 1]  = 'africa_do_sul'
+df_caf_2010_classif['conf_cont'].loc[df_caf_2010_classif.shape[0] - 1] = 'caf'
+
+df_uefa_2006_classif.reset_index(drop=True, inplace=True)
+df_uefa_2006_classif.loc[len(df_uefa_2006_classif)] = None
+df_uefa_2006_classif['selecao'].loc[df_uefa_2006_classif.shape[0] - 1]  = 'alemanha'
+df_uefa_2006_classif['conf_cont'].loc[df_uefa_2006_classif.shape[0] - 1] = 'uefa'
 
 
 # validacao simples do numero de selecoes classificadas
-qtd_conmebol = 4
-qtd_concacaf = 4
-qtd_uefa = 13
-qtd_caf = 5
-qtd_afc = 6
-qtd_total_esperada = qtd_conmebol + qtd_concacaf + qtd_uefa + qtd_caf + qtd_afc
-qtd_total_atual = len(df_conmebol_classif) + len(df_concacaf_classif) + len(df_uefa_classif) + len(df_caf_classif) + len(df_afc_classif)
+dfs_classif_2022 = [df_conmebol_2022_classif, df_concacaf_2022_classif, df_uefa_2022_classif, df_caf_2022_classif, df_afc_2022_classif]
+dfs_classif_2018 = [df_conmebol_2018_classif, df_concacaf_2018_classif, df_uefa_2018_classif, df_caf_2018_classif, df_afc_2018_classif]
+dfs_classif_2014 = [df_conmebol_2014_classif, df_concacaf_2014_classif, df_uefa_2014_classif, df_caf_2014_classif, df_afc_2014_classif]
+dfs_classif_2010 = [df_conmebol_2010_classif, df_concacaf_2010_classif, df_uefa_2010_classif, df_caf_2010_classif, df_afc_2010_classif, df_ofc_2010_classif]
+dfs_classif_2006 = [df_conmebol_2006_classif, df_concacaf_2006_classif, df_uefa_2006_classif, df_caf_2006_classif, df_afc_2006_classif, df_ofc_2006_classif]
 
-vetor_valid = [
-    ['conmebol', qtd_conmebol, len(df_conmebol_classif)],
-    ['concacaf', qtd_concacaf, len(df_concacaf_classif)],
-    ['uefa', qtd_uefa, len(df_uefa_classif)],
-    ['caf', qtd_caf, len(df_caf_classif)],
-    ['afc', qtd_afc, len(df_afc_classif)],
-    ['total', qtd_total_esperada, qtd_total_atual]
-]
-for valid in vetor_valid:
-    print(f'Qtd {valid[0]}: {valid[2]} de {valid[1]} selecoes classif')
+dfs_classif = [dfs_classif_2022, dfs_classif_2018, dfs_classif_2014, dfs_classif_2010, dfs_classif_2006]
+listas_selecoes_classif = [selecoes_classif_2022, selecoes_classif_2018, selecoes_classif_2014, selecoes_classif_2010, selecoes_classif_2006]
+
+for i in range(len(dfs_classif)):
+    contador = 0
+    df_selecoes_classif = pd.DataFrame(columns=df_conmebol_2022_classif.columns)
+
+    for df_conf_cont in dfs_classif[i]:
+        contador += df_conf_cont.shape[0]
+        df_selecoes_classif = pd.concat([df_selecoes_classif, df_conf_cont])
+
+    ano_copa = 2022 - i * 4
+    selecoes_classif = listas_selecoes_classif[i]
+    selecoes_faltantes = [selecao for selecao in selecoes_classif if selecao not in list(df_selecoes_classif['selecao'])]
+
+    print(f'Temos {contador} seleções no df da copa de {ano_copa}')
+    print(f'Faltam as seleções: {selecoes_faltantes}')
+    print('')
 
 
 # salvando os dataframes
-df_conmebol_classif.to_csv('silver/2022/df_conmebol_classif.csv', sep=';', index=False)
-df_concacaf_classif.to_csv('silver/2022/df_concacaf_classif.csv', sep=';', index=False)
-df_uefa_classif.to_csv('silver/2022/df_uefa_classif.csv', sep=';', index=False)
-df_caf_classif.to_csv('silver/2022/df_caf_classif.csv', sep=';', index=False)
-df_afc_classif.to_csv('silver/2022/df_afc_classif.csv', sep=';', index=False)
 
-df_conmebol_desclassif.to_csv('silver/2022/df_conmebol_desclassif.csv', sep=';', index=False)
-df_concacaf_desclassif.to_csv('silver/2022/df_concacaf_desclassif.csv', sep=';', index=False)
-df_uefa_desclassif.to_csv('silver/2022/df_uefa_desclassif.csv', sep=';', index=False)
-df_caf_desclassif.to_csv('silver/2022/df_caf_desclassif.csv', sep=';', index=False)
-df_afc_desclassif.to_csv('silver/2022/df_afc_desclassif.csv', sep=';', index=False)
-# %%
+silver_path = 'C:/Users/Rustabo/Projetos/copa_do_mundo/silver/'
+
+# salvando os dataframes das selecoes classificadas
+df_conmebol_2022_classif.to_csv(f'{silver_path}2022/df_conmebol_2022_classif.csv', sep=';', index=False)
+df_concacaf_2022_classif.to_csv(f'{silver_path}2022/df_concacaf_2022_classif.csv', sep=';', index=False)
+df_uefa_2022_classif.to_csv(f'{silver_path}2022/df_uefa_2022_classif.csv', sep=';', index=False)
+df_caf_2022_classif.to_csv(f'{silver_path}2022/df_caf_2022_classif.csv', sep=';', index=False)
+df_afc_2022_classif.to_csv(f'{silver_path}2022/df_afc_2022_classif.csv', sep=';', index=False)
+
+df_conmebol_2018_classif.to_csv(f'{silver_path}2018/df_conmebol_2018_classif.csv', sep=';', index=False)
+df_concacaf_2018_classif.to_csv(f'{silver_path}2018/df_concacaf_2018_classif.csv', sep=';', index=False)
+df_uefa_2018_classif.to_csv(f'{silver_path}2018/df_uefa_2018_classif.csv', sep=';', index=False)
+df_caf_2018_classif.to_csv(f'{silver_path}2018/df_caf_2018_classif.csv', sep=';', index=False)
+df_afc_2018_classif.to_csv(f'{silver_path}2018/df_afc_2018_classif.csv', sep=';', index=False)
+
+df_conmebol_2014_classif.to_csv(f'{silver_path}2014/df_conmebol_2014_classif.csv', sep=';', index=False)
+df_concacaf_2014_classif.to_csv(f'{silver_path}2014/df_concacaf_2014_classif.csv', sep=';', index=False)
+df_uefa_2014_classif.to_csv(f'{silver_path}2014/df_uefa_2014_classif.csv', sep=';', index=False)
+df_caf_2014_classif.to_csv(f'{silver_path}2014/df_caf_2014_classif.csv', sep=';', index=False)
+df_afc_2014_classif.to_csv(f'{silver_path}2014/df_afc_2014_classif.csv', sep=';', index=False)
+
+df_conmebol_2010_classif.to_csv(f'{silver_path}2010/df_conmebol_2010_classif.csv', sep=';', index=False)
+df_concacaf_2010_classif.to_csv(f'{silver_path}2010/df_concacaf_2010_classif.csv', sep=';', index=False)
+df_uefa_2010_classif.to_csv(f'{silver_path}2010/df_uefa_2010_classif.csv', sep=';', index=False)
+df_caf_2010_classif.to_csv(f'{silver_path}2010/df_caf_2010_classif.csv', sep=';', index=False)
+df_afc_2010_classif.to_csv(f'{silver_path}2010/df_afc_2010_classif.csv', sep=';', index=False)
+df_ofc_2010_classif.to_csv(f'{silver_path}2010/df_ofc_2010_classif.csv', sep=';', index=False)
+
+df_conmebol_2006_classif.to_csv(f'{silver_path}2006/df_conmebol_2006_classif.csv', sep=';', index=False)
+df_concacaf_2006_classif.to_csv(f'{silver_path}2006/df_concacaf_2006_classif.csv', sep=';', index=False)
+df_uefa_2006_classif.to_csv(f'{silver_path}2006/df_uefa_2006_classif.csv', sep=';', index=False)
+df_caf_2006_classif.to_csv(f'{silver_path}2006/df_caf_2006_classif.csv', sep=';', index=False)
+df_afc_2006_classif.to_csv(f'{silver_path}2006/df_afc_2006_classif.csv', sep=';', index=False)
+df_ofc_2006_classif.to_csv(f'{silver_path}2006/df_ofc_2006_classif.csv', sep=';', index=False)
+
+
+# salvando os dataframes das selecoes desclassificadas
+df_conmebol_2022_classif.to_csv(f'{silver_path}2022/df_conmebol_2022_classif.csv', sep=';', index=False)
+df_concacaf_2022_classif.to_csv(f'{silver_path}2022/df_concacaf_2022_classif.csv', sep=';', index=False)
+df_uefa_2022_classif.to_csv(f'{silver_path}2022/df_uefa_2022_classif.csv', sep=';', index=False)
+df_caf_2022_classif.to_csv(f'{silver_path}2022/df_caf_2022_classif.csv', sep=';', index=False)
+df_afc_2022_classif.to_csv(f'{silver_path}2022/df_afc_2022_classif.csv', sep=';', index=False)
+
+df_conmebol_2018_classif.to_csv(f'{silver_path}2018/df_conmebol_2018_classif.csv', sep=';', index=False)
+df_concacaf_2018_classif.to_csv(f'{silver_path}2018/df_concacaf_2018_classif.csv', sep=';', index=False)
+df_uefa_2018_classif.to_csv(f'{silver_path}2018/df_uefa_2018_classif.csv', sep=';', index=False)
+df_caf_2018_classif.to_csv(f'{silver_path}2018/df_caf_2018_classif.csv', sep=';', index=False)
+df_afc_2018_classif.to_csv(f'{silver_path}2018/df_afc_2018_classif.csv', sep=';', index=False)
+
+df_conmebol_2014_classif.to_csv(f'{silver_path}2014/df_conmebol_2014_classif.csv', sep=';', index=False)
+df_concacaf_2014_classif.to_csv(f'{silver_path}2014/df_concacaf_2014_classif.csv', sep=';', index=False)
+df_uefa_2014_classif.to_csv(f'{silver_path}2014/df_uefa_2014_classif.csv', sep=';', index=False)
+df_caf_2014_classif.to_csv(f'{silver_path}2014/df_caf_2014_classif.csv', sep=';', index=False)
+df_afc_2014_classif.to_csv(f'{silver_path}2014/df_afc_2014_classif.csv', sep=';', index=False)
+
+df_conmebol_2010_desclassif.to_csv(f'{silver_path}2010/df_conmebol_2010_desclassif.csv', sep=';', index=False)
+df_concacaf_2010_desclassif.to_csv(f'{silver_path}2010/df_concacaf_2010_desclassif.csv', sep=';', index=False)
+df_uefa_2010_desclassif.to_csv(f'{silver_path}2010/df_uefa_2010_desclassif.csv', sep=';', index=False)
+df_caf_2010_desclassif.to_csv(f'{silver_path}2010/df_caf_2010_desclassif.csv', sep=';', index=False)
+df_afc_2010_desclassif.to_csv(f'{silver_path}2010/df_afc_2010_desclassif.csv', sep=';', index=False)
+df_ofc_2010_desclassif.to_csv(f'{silver_path}2010/df_ofc_2010_desclassif.csv', sep=';', index=False)
+
+df_conmebol_2006_desclassif.to_csv(f'{silver_path}2006/df_conmebol_2006_desclassif.csv', sep=';', index=False)
+df_concacaf_2006_desclassif.to_csv(f'{silver_path}2006/df_concacaf_2006_desclassif.csv', sep=';', index=False)
+df_uefa_2006_desclassif.to_csv(f'{silver_path}2006/df_uefa_2006_desclassif.csv', sep=';', index=False)
+df_caf_2006_desclassif.to_csv(f'{silver_path}2006/df_caf_2006_desclassif.csv', sep=';', index=False)
+df_afc_2006_desclassif.to_csv(f'{silver_path}2006/df_afc_2006_desclassif.csv', sep=';', index=False)
+df_ofc_2006_desclassif.to_csv(f'{silver_path}2006/df_ofc_2006_desclassif.csv', sep=';', index=False)
