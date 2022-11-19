@@ -5,14 +5,15 @@ from bs4 import BeautifulSoup as bs
 from unidecode import unidecode
 
 
-# importando o dataframe de classificados 2014
-df_classif_2014 = pd.read_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/gold/2014/df_classif_2014.csv', sep=';')
-selecoes_classificadas = list(df_classif_2014['selecao'])
+# importando o dataframe de classificados 2010
+df_classif_2010 = pd.read_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/gold/2010/df_classif_2010.csv', sep=';')
+selecoes_classificadas = list(df_classif_2010['selecao'])
 
 
 # extraindo os codigos das selecoes
-ano = 'fifa15_14/'
-url_extrair_codigo = f'https://www.fifaindex.com/pt-br/players/{ano}?page=1&gender=0&order=desc'
+ano = 2010
+ano_param_url = 'fifa11_7/'
+url_extrair_codigo = f'https://www.fifaindex.com/pt-br/players/{ano_param_url}?page=1&gender=0&order=desc'
 req = requests.get(url_extrair_codigo)
 bs_req = bs(req.text, features="lxml")
 lista = bs_req.find_all('select', attrs={'name':'nationality', 'placeholder':'Select Option'})[0]
@@ -45,8 +46,8 @@ selecoes_esquecidas.value_counts()
 """
 
 # marcando as selecoes classificadas para cada copa do mundo
-df_cod_selecoes['copa_2014'] = [1 if selecao in selecoes_classificadas else 0 for selecao in df_cod_selecoes['selecao']]
-cod_selecoes_classificadas = list(df_cod_selecoes[df_cod_selecoes['copa_2014'] == 1]['cod'])
+df_cod_selecoes[f'copa_{str(ano)}'] = [1 if selecao in selecoes_classificadas else 0 for selecao in df_cod_selecoes['selecao']]
+cod_selecoes_classificadas = list(df_cod_selecoes[df_cod_selecoes[f'copa_{str(ano)}'] == 1]['cod'])
 
 
 # extraindo as tabelas com o beautiful soup
@@ -60,13 +61,13 @@ for selecao in cod_selecoes_classificadas:
     for page in range(1,11):
         print(f'selecao {contador} / 32 - pagina {page} / 10')
         try:
-            url = f'https://www.fifaindex.com/pt-br/players/{ano}?page={page}&gender=0&nationality={selecao}&order=desc'
+            url = f'https://www.fifaindex.com/pt-br/players/{ano_param_url}?page={page}&gender=0&nationality={selecao}&order=desc'
             req_stats = requests.get(url)
             bs_stats = bs(req_stats.text, features="lxml")
             table_stats = bs_stats.find('table', attrs={'class':'table table-striped table-players'})
             df_stats_selecao_page = pd.read_html(str(table_stats))[0]
             df_stats_selecao_page = df_stats_selecao_page.loc[:,'GER-POT':'Idade']
-            df_stats_selecao_page['ano'] = 2014
+            df_stats_selecao_page['ano'] = ano
             df_stats_selecao_page['page'] = page
             df_stats_selecao_page['selecao'] = selecao
             df_stats_selecao = pd.concat([df_stats_selecao, df_stats_selecao_page], ignore_index=True)
@@ -75,4 +76,4 @@ for selecao in cod_selecoes_classificadas:
     
     df_stats = pd.concat([df_stats, df_stats_selecao], ignore_index=True)
 
-df_stats.to_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/2014/df_stats.csv', sep=';', index=False)
+df_stats.to_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/{str(ano)}/df_stats.csv', sep=';', index=False)
