@@ -6,15 +6,17 @@ Coleta de dados das eliminatórias:
     ✔ Eliminatórias de 2006 @done(22-11-15 16:41)
 
 Tratamento de dados das eliminatórias:
-    ☐ Bronze to silver
-    ☐ Silver to gold
+    ✔ Bronze to silver @done(22-11-16 22:55)
+    ✔ Silver to gold @done(22-11-17 01:03)
 
 Coleta de dados dos FIFA Stats:
     ✔ FIFA Stats 2023 @done(22-11-15 11:37)
-    ☐ FIFA Stats 2019
-    ☐ FIFA Stats 2015
-    ☐ FIFA Stats 2011
-    ☐ FIFA Stats 2007
+    ✔ FIFA Stats 2019 @done(22-11-17 20:18)
+    ✔ FIFA Stats 2015 @done(22-11-17 20:38)
+    ✔ FIFA Stats 2011 @done(22-11-19 10:58)
+    ✔ FIFA Stats 2007 @done(22-11-19 11:06)
+    ☐ Trabalhar nas seleções não marcadas - prov. estão causando os NaN
+    ☐ Unificar o código em um script só usando for
 
 Tratamento de dados dos FIFA Stats:
     ☐ Bronze to silver

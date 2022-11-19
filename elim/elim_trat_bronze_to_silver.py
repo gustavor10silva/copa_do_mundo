@@ -116,6 +116,7 @@ for df in dfs:
     df['selecao'] = df['selecao'].str.replace(' ', '_')
     df['selecao'] = df['selecao'].str.replace('paises_baixos', 'holanda')
     df['selecao'] = df['selecao'].str.replace('chequia', 'republica_tcheca')
+    df['selecao'] = df['selecao'].str.replace('servia_e_montenegro', 'servia')
 
     if 'sg' not in df.columns:
         df['sg'] = df['gp'] - df['gc']
@@ -158,7 +159,7 @@ selecoes_classif_2010 = [
 ]
 selecoes_classif_2006 = [
     'alemanha', 'inglaterra', 'argentina', 'portugal', 'equador', 'suecia', 'holanda', 'mexico',
-    'polonia', 'paraguai', 'costa_do_marfim', 'angola', 'costa_rica', 'trindade_e_tobago', 'servia_e_montenegro',
+    'polonia', 'paraguai', 'costa_do_marfim', 'angola', 'costa_rica', 'trindade_e_tobago', 'servia',
     'ira', 'italia', 'brasil', 'suica', 'espanha', 'gana', 'australia', 'franca', 'ucrania', 'republica_tcheca',
     'croacia', 'coreia_do_sul', 'tunisia','estados_unidos', 'japao', 'togo', 'arabia_saudita'
 ]
