@@ -30,7 +30,7 @@ dict_replace = {
     'Greece' : 'grecia',
     'Chile' : 'chile',
     'Saudi Arabia' : 'arabia_saudita',
-    'Algeria' : 'algeria',
+    'Algeria' : 'argelia',
     'Serbia and Montenegro' : 'servia',
     'Serbia' : 'servia',
     'Colombia' : 'colombia',
@@ -69,6 +69,7 @@ anos = ['2006', '2010', '2014', '2018']
 for ano in anos:
     df_jogos = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/{ano}/df_jogos.csv', sep=';')
     df_jogos = df_jogos[['home_team_name', 'away_team_name', 'home_team_win']]
+    df_jogos['ano'] = ano
 
     for col in ['home_team_name', 'away_team_name']:
         for nome_velho, nome_novo in dict_replace.items():

@@ -149,9 +149,9 @@ for i in range(len(lista_df_classif)):
     df['aprov'] = round(df['pts'] / (df['j']*3), 2)
     df['perc_v'] = round(df['v'] / df['j'], 2)
 
-    df['classif'] = None
-    df.loc[df['selecao'].isin(selecoes_classif_repescagem[i]),'classif'] = 'repescagem'
-    df.loc[~df['selecao'].isin(selecoes_classif_repescagem[i]),'classif'] = 'direta'
+    df['repescagem'] = None
+    df.loc[df['selecao'].isin(selecoes_classif_repescagem[i]),'repescagem'] = 1
+    df.loc[~df['selecao'].isin(selecoes_classif_repescagem[i]),'repescagem'] = 0
 
     df['gp_por_jogo'] = round(df['gp'] / df['j'], 2)
     df['gc_por_jogo'] = round(df['gc'] / df['j'], 2)
