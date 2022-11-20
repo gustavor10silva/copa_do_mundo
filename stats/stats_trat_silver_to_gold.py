@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # tratando as bases da camada silver e ingerindo na camada gold
-anos = ['2006', '2010', '2014', '2018']
+anos = ['2006', '2010', '2014', '2018', '2022']
 
 for ano in anos:
     df_stats = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/silver/{ano}/df_stats_{ano}.csv', sep=';')
