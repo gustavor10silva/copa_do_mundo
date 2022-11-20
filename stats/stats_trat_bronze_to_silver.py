@@ -19,14 +19,16 @@ for i in range(len(anos_infos)):
     defesa = anos_infos[i][2]
 
     df_stats = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/{ano}/df_stats.csv', sep=';')
-    df_stats = df_stats[(df_stats['Nome'].isna() == False) & (df_stats['page'] == 1)]
+    df_stats = df_stats[(df_stats['Nome'].isna() == False) & (df_stats['page'] <= 2)]
     df_stats.rename(columns={'Idade':'idade'}, inplace=True)
     df_stats = df_stats.astype({'GER-POT':int, 'Posições Preferidas':str, 'idade':int})
     df_stats = df_stats.astype({'GER-POT':str})
 
     df_stats['ger'] = df_stats['GER-POT'].str[:2]
     df_stats['pot'] = df_stats['GER-POT'].str[2:]
-    df_stats.drop(columns=['GER-POT', 'Nome', 'page', 'ano'], inplace=True)
+    df_stats = df_stats.astype({'ger':int, 'pot':int})
+    df_stats['score'] = (df_stats['ger'] + df_stats['pot']) / 2
+    df_stats.drop(columns=['GER-POT', 'Nome', 'page', 'ano', 'ger', 'pot'], inplace=True)
 
     funcao = [
         'ataque' if re.search(ataque, posicao)
@@ -36,7 +38,7 @@ for i in range(len(anos_infos)):
     df_stats['funcao'] = funcao
     df_stats.drop(columns=['Posições Preferidas'], inplace=True)
 
-    df_stats = df_stats.astype({'ger':int, 'pot':int})
+    
     df_stats.reset_index(drop=True, inplace=True)
 
     df_stats.to_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/silver/{ano}/df_stats_{ano}.csv', sep=';', index=False)

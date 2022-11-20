@@ -15,18 +15,25 @@ Coleta de dados dos FIFA Stats:
     ✔ FIFA Stats 2015 @done(22-11-17 20:38)
     ✔ FIFA Stats 2011 @done(22-11-19 10:58)
     ✔ FIFA Stats 2007 @done(22-11-19 11:06)
-    ☐ Trabalhar nas seleções não marcadas - prov. estão causando os NaN
-    ☐ Unificar o código em um script só usando for
+    ✔ Trabalhar nas seleções não marcadas - prov. estão causando os NaN @done(22-11-19 12:24)
+    ✔ Unificar o código em um script só usando for @done(22-11-19 12:24)
 
 Tratamento de dados dos FIFA Stats:
+    ✔ Bronze to silver @done(22-11-19 21:58)
+    ✔ Silver to gold @done(22-11-19 23:33)
+
+Coleta de dados das Copas do Mundo:
+    ✔ Copa do Mundo 2018 @done(22-11-19 14:44)
+    ✔ Copa do Mundo 2014 @done(22-11-19 14:44)
+    ✔ Copa do Mundo 2010 @done(22-11-19 14:44)
+    ✔ Copa do Mundo 2006 @done(22-11-19 14:44)
+
+Tratamento de dados das Copas do Mundo:
     ☐ Bronze to silver
     ☐ Silver to gold
 
-Coleta de dados das Copas do Mundo:
-    ☐ Copa do Mundo 2018
-    ☐ Copa do Mundo 2014
-    ☐ Copa do Mundo 2010
-    ☐ Copa do Mundo 2006
+Tratamento de dados final - Unificando os dataframes:
+    ☐ Fazer
 
 Modelo:
     ☐ Pesquisa dos modelos
