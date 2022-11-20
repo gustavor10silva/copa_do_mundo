@@ -29,13 +29,13 @@ Coleta de dados das Copas do Mundo:
     ✔ Copa do Mundo 2006 @done(22-11-19 14:44)
 
 Tratamento de dados das Copas do Mundo:
-    ☐ Bronze to silver
-    ☐ Silver to gold
+    ✔ Bronze to silver @done(22-11-20 00:34)
+    ✔ Silver to gold @done(22-11-20 00:34)
 
 Tratamento de dados final - Unificando os dataframes:
-    ☐ Fazer
+    ✔ Fazer @done(22-11-20 01:42)
+    ☐ Voltar no arquivo jogos_trat_final e consertar os erros que estavam dando no df (naquele append 0)
 
 Modelo:
-    ☐ Pesquisa dos modelos
-    ☐ Escolha do modelo
-    ☐ Treino e teste do modelo
+    ☐ Seleção de variáveis
+    ☐ Tunagem com GridSearch

@@ -46,7 +46,7 @@ for ano in anos:
                         try:
                             lista_col.append(int(df[df['selecao'] == selecao][col]))
                         except:
-                            lista_col.append(str(df[df['selecao'] == selecao][col]))
+                            lista_col.append(0)
                     
                     df_jogos[f'{categoria}_{col}'] = lista_col
     
