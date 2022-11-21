@@ -38,7 +38,6 @@ for i in range(len(anos_infos)):
     ]
     df_stats['funcao'] = funcao
     df_stats.drop(columns=['Posições Preferidas'], inplace=True)
-
     
     df_stats.reset_index(drop=True, inplace=True)
 

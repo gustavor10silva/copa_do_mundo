@@ -1,3 +1,4 @@
+#%%
 # importando bibliotecas
 import pandas as pd
 
@@ -27,12 +28,16 @@ df_copas = pd.DataFrame(columns=cols)
 
 
 # populando os dataframes finais de cada ano e concatenando em um único dataframe
-anos = ['2006', '2010', '2014', '2018']
+anos = ['2006', '2010', '2014', '2018', '2022']
 
+#%%
 for ano in anos:
     df_jogos = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_jogos_{ano}.csv', sep=';')
     df_stats = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_stats_{ano}.csv', sep=';')
     df_elim = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_classif_{ano}.csv', sep=';')
+
+    if ano == '2022':
+        df_jogos.drop(columns=['grupo'], inplace=True)
 
     for categoria in ['home', 'away']:
 
@@ -43,10 +48,7 @@ for ano in anos:
                     lista_col = []
 
                     for selecao in df_jogos[f'{categoria}_team_name']:
-                        try:
-                            lista_col.append(int(df[df['selecao'] == selecao][col]))
-                        except:
-                            lista_col.append(0)
+                        lista_col.append(int(df[df['selecao'] == selecao][col]))
                     
                     df_jogos[f'{categoria}_{col}'] = lista_col
     
@@ -55,3 +57,28 @@ for ano in anos:
 
 # salvando o dataframe final
 df_copas.to_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/gold/df_copas.csv', sep=';', index=False)
+
+
+
+#%%
+ano = '2022'
+df_jogos = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_jogos_{ano}.csv', sep=';')
+df_stats = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_stats_{ano}.csv', sep=';')
+df_elim = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_classif_{ano}.csv', sep=';')
+
+df_stats.info()
+# %%
+df_stats_silver = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_stats_{ano}.csv', sep=';')
+selecoes_31 = df_stats_silver['selecao'].value_counts().index
+#%%
+df_stats_silver = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/silver/{ano}/df_stats_{ano}.csv', sep=';')
+len(df_stats_silver['selecao'].unique())
+#%%
+df_stats_bronze = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/{ano}/df_stats.csv', sep=';')
+len(df_stats_bronze['selecao'].unique())
+#%%
+selecoes_31
+#%%
+df_elim.info()
+
+# %%

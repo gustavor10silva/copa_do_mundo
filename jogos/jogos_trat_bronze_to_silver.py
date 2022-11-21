@@ -76,3 +76,8 @@ for ano in anos:
             df_jogos[col] = df_jogos[col].str.replace(nome_velho, nome_novo)
 
     df_jogos.to_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/silver/{ano}/df_jogos_{ano}.csv', sep=';', index=False)
+
+
+# fazendo o mesmo com o dataframe da copa de 2022
+df_jogos_2022 = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/2022/df_jogos.csv', sep=';')
+df_jogos_2022.to_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/silver/2022/df_jogos_2022.csv', sep=';', index=False)
