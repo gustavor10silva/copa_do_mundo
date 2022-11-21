@@ -1,257 +1,913 @@
-home_team_name;home_team_label;away_team_name;away_team_label
-alemanha;1;costa_rica;16
-polonia;42;equador;20
-inglaterra;30;paraguai;40
-trindade_e_tobago;51;suecia;48
-argentina;5;costa_do_marfim;15
-servia;47;holanda;28
-mexico;36;ira;31
-angola;2;portugal;43
-australia;6;japao;34
-estados_unidos;24;republica_tcheca;44
-italia;33;gana;26
-coreia_do_sul;14;togo;50
-franca;25;suica;49
-brasil;9;croacia;17
-espanha;23;ucrania;53
-tunisia;52;arabia_saudita;3
-alemanha;1;polonia;42
-equador;20;costa_rica;16
-inglaterra;30;trindade_e_tobago;51
-suecia;48;paraguai;40
-argentina;5;servia;47
-holanda;28;costa_do_marfim;15
-mexico;36;angola;2
-portugal;43;ira;31
-republica_tcheca;44;gana;26
-italia;33;estados_unidos;24
-japao;34;croacia;17
-brasil;9;australia;6
-franca;25;coreia_do_sul;14
-togo;50;suica;49
-arabia_saudita;3;ucrania;53
-espanha;23;tunisia;52
-costa_rica;16;polonia;42
-equador;20;alemanha;1
-paraguai;40;trindade_e_tobago;51
-suecia;48;inglaterra;30
-ira;31;angola;2
-portugal;43;mexico;36
-costa_do_marfim;15;servia;47
-holanda;28;argentina;5
-republica_tcheca;44;italia;33
-gana;26;estados_unidos;24
-croacia;17;australia;6
-japao;34;brasil;9
-arabia_saudita;3;espanha;23
-ucrania;53;tunisia;52
-suica;49;coreia_do_sul;14
-togo;50;franca;25
-alemanha;1;suecia;48
-argentina;5;mexico;36
-inglaterra;30;equador;20
-portugal;43;holanda;28
-italia;33;australia;6
-suica;49;ucrania;53
-brasil;9;gana;26
-espanha;23;franca;25
-alemanha;1;argentina;5
-italia;33;ucrania;53
-inglaterra;30;portugal;43
-brasil;9;franca;25
-alemanha;1;italia;33
-portugal;43;franca;25
-alemanha;1;portugal;43
-italia;33;franca;25
-africa_do_sul;0;mexico;36
-uruguai;54;franca;25
-coreia_do_sul;14;grecia;27
-argentina;5;nigeria;37
-inglaterra;30;estados_unidos;24
-argelia;4;eslovenia;22
-servia;47;gana;26
-alemanha;1;australia;6
-holanda;28;dinamarca;18
-japao;34;camaroes;10
-italia;33;paraguai;40
-nova_zelandia;38;eslovaquia;21
-costa_do_marfim;15;portugal;43
-brasil;9;coreia_do_norte;13
-honduras;29;chile;11
-espanha;23;suica;49
-africa_do_sul;0;uruguai;54
-argentina;5;coreia_do_sul;14
-grecia;27;nigeria;37
-franca;25;mexico;36
-alemanha;1;servia;47
-eslovenia;22;estados_unidos;24
-inglaterra;30;argelia;4
-holanda;28;japao;34
-gana;26;australia;6
-camaroes;10;dinamarca;18
-eslovaquia;21;paraguai;40
-italia;33;nova_zelandia;38
-brasil;9;costa_do_marfim;15
-portugal;43;coreia_do_norte;13
-chile;11;suica;49
-espanha;23;honduras;29
-franca;25;africa_do_sul;0
-mexico;36;uruguai;54
-grecia;27;argentina;5
-nigeria;37;coreia_do_sul;14
-eslovenia;22;inglaterra;30
-estados_unidos;24;argelia;4
-australia;6;servia;47
-gana;26;alemanha;1
-paraguai;40;nova_zelandia;38
-eslovaquia;21;italia;33
-camaroes;10;holanda;28
-dinamarca;18;japao;34
-coreia_do_norte;13;costa_do_marfim;15
-portugal;43;brasil;9
-chile;11;espanha;23
-suica;49;honduras;29
-uruguai;54;coreia_do_sul;14
-estados_unidos;24;gana;26
-alemanha;1;inglaterra;30
-argentina;5;mexico;36
-holanda;28;eslovaquia;21
-brasil;9;chile;11
-paraguai;40;japao;34
-espanha;23;portugal;43
-holanda;28;brasil;9
-uruguai;54;gana;26
-argentina;5;alemanha;1
-paraguai;40;espanha;23
-uruguai;54;holanda;28
-alemanha;1;espanha;23
-uruguai;54;alemanha;1
-holanda;28;espanha;23
-brasil;9;croacia;17
-mexico;36;camaroes;10
-espanha;23;holanda;28
-chile;11;australia;6
-colombia;12;grecia;27
-uruguai;54;costa_rica;16
-inglaterra;30;italia;33
-costa_do_marfim;15;japao;34
-suica;49;equador;20
-franca;25;honduras;29
-argentina;5;bosnia_e_herzegovina;8
-alemanha;1;portugal;43
-ira;31;nigeria;37
-gana;26;estados_unidos;24
-belgica;7;argelia;4
-brasil;9;mexico;36
-russia;45;coreia_do_sul;14
-australia;6;holanda;28
-espanha;23;chile;11
-camaroes;10;croacia;17
-colombia;12;costa_do_marfim;15
-uruguai;54;inglaterra;30
-japao;34;grecia;27
-italia;33;costa_rica;16
-suica;49;franca;25
-honduras;29;equador;20
-argentina;5;ira;31
-alemanha;1;gana;26
-nigeria;37;bosnia_e_herzegovina;8
-belgica;7;russia;45
-coreia_do_sul;14;argelia;4
-estados_unidos;24;portugal;43
-australia;6;espanha;23
-holanda;28;chile;11
-camaroes;10;brasil;9
-croacia;17;mexico;36
-costa_rica;16;inglaterra;30
-italia;33;uruguai;54
-japao;34;colombia;12
-grecia;27;costa_do_marfim;15
-bosnia_e_herzegovina;8;ira;31
-nigeria;37;argentina;5
-honduras;29;suica;49
-equador;20;franca;25
-portugal;43;gana;26
-estados_unidos;24;alemanha;1
-argelia;4;russia;45
-coreia_do_sul;14;belgica;7
-brasil;9;chile;11
-colombia;12;uruguai;54
-holanda;28;mexico;36
-costa_rica;16;grecia;27
-franca;25;nigeria;37
-alemanha;1;argelia;4
-argentina;5;suica;49
-belgica;7;estados_unidos;24
-franca;25;alemanha;1
-brasil;9;colombia;12
-argentina;5;belgica;7
-holanda;28;costa_rica;16
-brasil;9;alemanha;1
-holanda;28;argentina;5
-brasil;9;holanda;28
-alemanha;1;argentina;5
-russia;45;arabia_saudita;3
-egito;19;uruguai;54
-marrocos;35;ira;31
-portugal;43;espanha;23
-franca;25;australia;6
-argentina;5;islandia;32
-peru;41;dinamarca;18
-croacia;17;nigeria;37
-costa_rica;16;servia;47
-alemanha;1;mexico;36
-brasil;9;suica;49
-suecia;48;coreia_do_sul;14
-belgica;7;panama;39
-tunisia;52;inglaterra;30
-colombia;12;japao;34
-polonia;42;senegal;46
-russia;45;egito;19
-portugal;43;marrocos;35
-uruguai;54;arabia_saudita;3
-ira;31;espanha;23
-dinamarca;18;australia;6
-franca;25;peru;41
-argentina;5;croacia;17
-brasil;9;costa_rica;16
-nigeria;37;islandia;32
-servia;47;suica;49
-belgica;7;tunisia;52
-coreia_do_sul;14;mexico;36
-alemanha;1;suecia;48
-inglaterra;30;panama;39
-japao;34;senegal;46
-polonia;42;colombia;12
-arabia_saudita;3;egito;19
-uruguai;54;russia;45
-espanha;23;marrocos;35
-ira;31;portugal;43
-australia;6;peru;41
-dinamarca;18;franca;25
-islandia;32;croacia;17
-nigeria;37;argentina;5
-coreia_do_sul;14;alemanha;1
-mexico;36;suecia;48
-servia;47;brasil;9
-suica;49;costa_rica;16
-japao;34;polonia;42
-senegal;46;colombia;12
-inglaterra;30;belgica;7
-panama;39;tunisia;52
-franca;25;argentina;5
-uruguai;54;portugal;43
-espanha;23;russia;45
-croacia;17;dinamarca;18
-brasil;9;mexico;36
-belgica;7;japao;34
-suecia;48;suica;49
-colombia;12;inglaterra;30
-uruguai;54;franca;25
-brasil;9;belgica;7
-suecia;48;inglaterra;30
-russia;45;croacia;17
-franca;25;belgica;7
-croacia;17;inglaterra;30
-belgica;7;inglaterra;30
-franca;25;croacia;17
+home_team_name;home_team_label;away_team_name;away_team_label;home_conf_cont;home_conf_cont_label;away_conf_cont;away_conf_cont_label
+alemanha;1;costa_rica;17;"21    uefa
+Name: conf_cont, dtype: object";17;"6    concacaf
+Name: conf_cont, dtype: object";17
+polonia;44;equador;21;"16    uefa
+Name: conf_cont, dtype: object";21;"2    conmebol
+Name: conf_cont, dtype: object";21
+inglaterra;31;paraguai;42;"15    uefa
+Name: conf_cont, dtype: object";42;"3    conmebol
+Name: conf_cont, dtype: object";42
+trindade_e_tobago;54;suecia;51;"7    concacaf
+Name: conf_cont, dtype: object";51;"20    uefa
+Name: conf_cont, dtype: object";51
+argentina;5;costa_do_marfim;16;"1    conmebol
+Name: conf_cont, dtype: object";16;"24    caf
+Name: conf_cont, dtype: object";16
+servia;50;holanda;29;"17    uefa
+Name: conf_cont, dtype: object";29;"8    uefa
+Name: conf_cont, dtype: object";29
+mexico;37;ira;32;"4    concacaf
+Name: conf_cont, dtype: object";32;"30    afc
+Name: conf_cont, dtype: object";32
+angola;2;portugal;45;"25    caf
+Name: conf_cont, dtype: object";45;"11    uefa
+Name: conf_cont, dtype: object";45
+australia;6;japao;35;"31    ofc
+Name: conf_cont, dtype: object";35;"29    afc
+Name: conf_cont, dtype: object";35
+estados_unidos;25;republica_tcheca;47;"5    concacaf
+Name: conf_cont, dtype: object";47;"9    uefa
+Name: conf_cont, dtype: object";47
+italia;34;gana;27;"14    uefa
+Name: conf_cont, dtype: object";27;"23    caf
+Name: conf_cont, dtype: object";27
+coreia_do_sul;15;togo;53;"28    afc
+Name: conf_cont, dtype: object";53;"22    caf
+Name: conf_cont, dtype: object";53
+franca;26;suica;52;"12    uefa
+Name: conf_cont, dtype: object";52;"13    uefa
+Name: conf_cont, dtype: object";52
+brasil;9;croacia;18;"0    conmebol
+Name: conf_cont, dtype: object";18;"19    uefa
+Name: conf_cont, dtype: object";18
+espanha;24;ucrania;56;"18    uefa
+Name: conf_cont, dtype: object";56;"10    uefa
+Name: conf_cont, dtype: object";56
+tunisia;55;arabia_saudita;3;"26    caf
+Name: conf_cont, dtype: object";3;"27    afc
+Name: conf_cont, dtype: object";3
+alemanha;1;polonia;44;"21    uefa
+Name: conf_cont, dtype: object";44;"16    uefa
+Name: conf_cont, dtype: object";44
+equador;21;costa_rica;17;"2    conmebol
+Name: conf_cont, dtype: object";17;"6    concacaf
+Name: conf_cont, dtype: object";17
+inglaterra;31;trindade_e_tobago;54;"15    uefa
+Name: conf_cont, dtype: object";54;"7    concacaf
+Name: conf_cont, dtype: object";54
+suecia;51;paraguai;42;"20    uefa
+Name: conf_cont, dtype: object";42;"3    conmebol
+Name: conf_cont, dtype: object";42
+argentina;5;servia;50;"1    conmebol
+Name: conf_cont, dtype: object";50;"17    uefa
+Name: conf_cont, dtype: object";50
+holanda;29;costa_do_marfim;16;"8    uefa
+Name: conf_cont, dtype: object";16;"24    caf
+Name: conf_cont, dtype: object";16
+mexico;37;angola;2;"4    concacaf
+Name: conf_cont, dtype: object";2;"25    caf
+Name: conf_cont, dtype: object";2
+portugal;45;ira;32;"11    uefa
+Name: conf_cont, dtype: object";32;"30    afc
+Name: conf_cont, dtype: object";32
+republica_tcheca;47;gana;27;"9    uefa
+Name: conf_cont, dtype: object";27;"23    caf
+Name: conf_cont, dtype: object";27
+italia;34;estados_unidos;25;"14    uefa
+Name: conf_cont, dtype: object";25;"5    concacaf
+Name: conf_cont, dtype: object";25
+japao;35;croacia;18;"29    afc
+Name: conf_cont, dtype: object";18;"19    uefa
+Name: conf_cont, dtype: object";18
+brasil;9;australia;6;"0    conmebol
+Name: conf_cont, dtype: object";6;"31    ofc
+Name: conf_cont, dtype: object";6
+franca;26;coreia_do_sul;15;"12    uefa
+Name: conf_cont, dtype: object";15;"28    afc
+Name: conf_cont, dtype: object";15
+togo;53;suica;52;"22    caf
+Name: conf_cont, dtype: object";52;"13    uefa
+Name: conf_cont, dtype: object";52
+arabia_saudita;3;ucrania;56;"27    afc
+Name: conf_cont, dtype: object";56;"10    uefa
+Name: conf_cont, dtype: object";56
+espanha;24;tunisia;55;"18    uefa
+Name: conf_cont, dtype: object";55;"26    caf
+Name: conf_cont, dtype: object";55
+costa_rica;17;polonia;44;"6    concacaf
+Name: conf_cont, dtype: object";44;"16    uefa
+Name: conf_cont, dtype: object";44
+equador;21;alemanha;1;"2    conmebol
+Name: conf_cont, dtype: object";1;"21    uefa
+Name: conf_cont, dtype: object";1
+paraguai;42;trindade_e_tobago;54;"3    conmebol
+Name: conf_cont, dtype: object";54;"7    concacaf
+Name: conf_cont, dtype: object";54
+suecia;51;inglaterra;31;"20    uefa
+Name: conf_cont, dtype: object";31;"15    uefa
+Name: conf_cont, dtype: object";31
+ira;32;angola;2;"30    afc
+Name: conf_cont, dtype: object";2;"25    caf
+Name: conf_cont, dtype: object";2
+portugal;45;mexico;37;"11    uefa
+Name: conf_cont, dtype: object";37;"4    concacaf
+Name: conf_cont, dtype: object";37
+costa_do_marfim;16;servia;50;"24    caf
+Name: conf_cont, dtype: object";50;"17    uefa
+Name: conf_cont, dtype: object";50
+holanda;29;argentina;5;"8    uefa
+Name: conf_cont, dtype: object";5;"1    conmebol
+Name: conf_cont, dtype: object";5
+republica_tcheca;47;italia;34;"9    uefa
+Name: conf_cont, dtype: object";34;"14    uefa
+Name: conf_cont, dtype: object";34
+gana;27;estados_unidos;25;"23    caf
+Name: conf_cont, dtype: object";25;"5    concacaf
+Name: conf_cont, dtype: object";25
+croacia;18;australia;6;"19    uefa
+Name: conf_cont, dtype: object";6;"31    ofc
+Name: conf_cont, dtype: object";6
+japao;35;brasil;9;"29    afc
+Name: conf_cont, dtype: object";9;"0    conmebol
+Name: conf_cont, dtype: object";9
+arabia_saudita;3;espanha;24;"27    afc
+Name: conf_cont, dtype: object";24;"18    uefa
+Name: conf_cont, dtype: object";24
+ucrania;56;tunisia;55;"10    uefa
+Name: conf_cont, dtype: object";55;"26    caf
+Name: conf_cont, dtype: object";55
+suica;52;coreia_do_sul;15;"13    uefa
+Name: conf_cont, dtype: object";15;"28    afc
+Name: conf_cont, dtype: object";15
+togo;53;franca;26;"22    caf
+Name: conf_cont, dtype: object";26;"12    uefa
+Name: conf_cont, dtype: object";26
+alemanha;1;suecia;51;"21    uefa
+Name: conf_cont, dtype: object";51;"20    uefa
+Name: conf_cont, dtype: object";51
+argentina;5;mexico;37;"1    conmebol
+Name: conf_cont, dtype: object";37;"4    concacaf
+Name: conf_cont, dtype: object";37
+inglaterra;31;equador;21;"15    uefa
+Name: conf_cont, dtype: object";21;"2    conmebol
+Name: conf_cont, dtype: object";21
+portugal;45;holanda;29;"11    uefa
+Name: conf_cont, dtype: object";29;"8    uefa
+Name: conf_cont, dtype: object";29
+italia;34;australia;6;"14    uefa
+Name: conf_cont, dtype: object";6;"31    ofc
+Name: conf_cont, dtype: object";6
+suica;52;ucrania;56;"13    uefa
+Name: conf_cont, dtype: object";56;"10    uefa
+Name: conf_cont, dtype: object";56
+brasil;9;gana;27;"0    conmebol
+Name: conf_cont, dtype: object";27;"23    caf
+Name: conf_cont, dtype: object";27
+espanha;24;franca;26;"18    uefa
+Name: conf_cont, dtype: object";26;"12    uefa
+Name: conf_cont, dtype: object";26
+alemanha;1;argentina;5;"21    uefa
+Name: conf_cont, dtype: object";5;"1    conmebol
+Name: conf_cont, dtype: object";5
+italia;34;ucrania;56;"14    uefa
+Name: conf_cont, dtype: object";56;"10    uefa
+Name: conf_cont, dtype: object";56
+inglaterra;31;portugal;45;"15    uefa
+Name: conf_cont, dtype: object";45;"11    uefa
+Name: conf_cont, dtype: object";45
+brasil;9;franca;26;"0    conmebol
+Name: conf_cont, dtype: object";26;"12    uefa
+Name: conf_cont, dtype: object";26
+alemanha;1;italia;34;"21    uefa
+Name: conf_cont, dtype: object";34;"14    uefa
+Name: conf_cont, dtype: object";34
+portugal;45;franca;26;"11    uefa
+Name: conf_cont, dtype: object";26;"12    uefa
+Name: conf_cont, dtype: object";26
+alemanha;1;portugal;45;"21    uefa
+Name: conf_cont, dtype: object";45;"11    uefa
+Name: conf_cont, dtype: object";45
+italia;34;franca;26;"14    uefa
+Name: conf_cont, dtype: object";26;"12    uefa
+Name: conf_cont, dtype: object";26
+africa_do_sul;0;mexico;37;"26    caf
+Name: conf_cont, dtype: object";37;"6    concacaf
+Name: conf_cont, dtype: object";37
+uruguai;57;franca;26;"4    conmebol
+Name: conf_cont, dtype: object";26;"18    uefa
+Name: conf_cont, dtype: object";26
+coreia_do_sul;15;grecia;28;"29    afc
+Name: conf_cont, dtype: object";28;"11    uefa
+Name: conf_cont, dtype: object";28
+argentina;5;nigeria;38;"3    conmebol
+Name: conf_cont, dtype: object";38;"22    caf
+Name: conf_cont, dtype: object";38
+inglaterra;31;estados_unidos;25;"16    uefa
+Name: conf_cont, dtype: object";25;"5    concacaf
+Name: conf_cont, dtype: object";25
+argelia;4;eslovenia;23;"23    caf
+Name: conf_cont, dtype: object";23;"13    uefa
+Name: conf_cont, dtype: object";23
+servia;50;gana;27;"17    uefa
+Name: conf_cont, dtype: object";27;"24    caf
+Name: conf_cont, dtype: object";27
+alemanha;1;australia;6;"14    uefa
+Name: conf_cont, dtype: object";6;"27    afc
+Name: conf_cont, dtype: object";6
+holanda;29;dinamarca;19;"20    uefa
+Name: conf_cont, dtype: object";19;"8    uefa
+Name: conf_cont, dtype: object";19
+japao;35;camaroes;10;"28    afc
+Name: conf_cont, dtype: object";10;"21    caf
+Name: conf_cont, dtype: object";10
+italia;34;paraguai;42;"19    uefa
+Name: conf_cont, dtype: object";42;"2    conmebol
+Name: conf_cont, dtype: object";42
+nova_zelandia;39;eslovaquia;22;"31    ofc
+Name: conf_cont, dtype: object";22;"12    uefa
+Name: conf_cont, dtype: object";22
+costa_do_marfim;16;portugal;45;"25    caf
+Name: conf_cont, dtype: object";45;"9    uefa
+Name: conf_cont, dtype: object";45
+brasil;9;coreia_do_norte;14;"0    conmebol
+Name: conf_cont, dtype: object";14;"30    afc
+Name: conf_cont, dtype: object";14
+honduras;30;chile;12;"7    concacaf
+Name: conf_cont, dtype: object";12;"1    conmebol
+Name: conf_cont, dtype: object";12
+espanha;24;suica;52;"15    uefa
+Name: conf_cont, dtype: object";52;"10    uefa
+Name: conf_cont, dtype: object";52
+africa_do_sul;0;uruguai;57;"26    caf
+Name: conf_cont, dtype: object";57;"4    conmebol
+Name: conf_cont, dtype: object";57
+argentina;5;coreia_do_sul;15;"3    conmebol
+Name: conf_cont, dtype: object";15;"29    afc
+Name: conf_cont, dtype: object";15
+grecia;28;nigeria;38;"11    uefa
+Name: conf_cont, dtype: object";38;"22    caf
+Name: conf_cont, dtype: object";38
+franca;26;mexico;37;"18    uefa
+Name: conf_cont, dtype: object";37;"6    concacaf
+Name: conf_cont, dtype: object";37
+alemanha;1;servia;50;"14    uefa
+Name: conf_cont, dtype: object";50;"17    uefa
+Name: conf_cont, dtype: object";50
+eslovenia;23;estados_unidos;25;"13    uefa
+Name: conf_cont, dtype: object";25;"5    concacaf
+Name: conf_cont, dtype: object";25
+inglaterra;31;argelia;4;"16    uefa
+Name: conf_cont, dtype: object";4;"23    caf
+Name: conf_cont, dtype: object";4
+holanda;29;japao;35;"20    uefa
+Name: conf_cont, dtype: object";35;"28    afc
+Name: conf_cont, dtype: object";35
+gana;27;australia;6;"24    caf
+Name: conf_cont, dtype: object";6;"27    afc
+Name: conf_cont, dtype: object";6
+camaroes;10;dinamarca;19;"21    caf
+Name: conf_cont, dtype: object";19;"8    uefa
+Name: conf_cont, dtype: object";19
+eslovaquia;22;paraguai;42;"12    uefa
+Name: conf_cont, dtype: object";42;"2    conmebol
+Name: conf_cont, dtype: object";42
+italia;34;nova_zelandia;39;"19    uefa
+Name: conf_cont, dtype: object";39;"31    ofc
+Name: conf_cont, dtype: object";39
+brasil;9;costa_do_marfim;16;"0    conmebol
+Name: conf_cont, dtype: object";16;"25    caf
+Name: conf_cont, dtype: object";16
+portugal;45;coreia_do_norte;14;"9    uefa
+Name: conf_cont, dtype: object";14;"30    afc
+Name: conf_cont, dtype: object";14
+chile;12;suica;52;"1    conmebol
+Name: conf_cont, dtype: object";52;"10    uefa
+Name: conf_cont, dtype: object";52
+espanha;24;honduras;30;"15    uefa
+Name: conf_cont, dtype: object";30;"7    concacaf
+Name: conf_cont, dtype: object";30
+franca;26;africa_do_sul;0;"18    uefa
+Name: conf_cont, dtype: object";0;"26    caf
+Name: conf_cont, dtype: object";0
+mexico;37;uruguai;57;"6    concacaf
+Name: conf_cont, dtype: object";57;"4    conmebol
+Name: conf_cont, dtype: object";57
+grecia;28;argentina;5;"11    uefa
+Name: conf_cont, dtype: object";5;"3    conmebol
+Name: conf_cont, dtype: object";5
+nigeria;38;coreia_do_sul;15;"22    caf
+Name: conf_cont, dtype: object";15;"29    afc
+Name: conf_cont, dtype: object";15
+eslovenia;23;inglaterra;31;"13    uefa
+Name: conf_cont, dtype: object";31;"16    uefa
+Name: conf_cont, dtype: object";31
+estados_unidos;25;argelia;4;"5    concacaf
+Name: conf_cont, dtype: object";4;"23    caf
+Name: conf_cont, dtype: object";4
+australia;6;servia;50;"27    afc
+Name: conf_cont, dtype: object";50;"17    uefa
+Name: conf_cont, dtype: object";50
+gana;27;alemanha;1;"24    caf
+Name: conf_cont, dtype: object";1;"14    uefa
+Name: conf_cont, dtype: object";1
+paraguai;42;nova_zelandia;39;"2    conmebol
+Name: conf_cont, dtype: object";39;"31    ofc
+Name: conf_cont, dtype: object";39
+eslovaquia;22;italia;34;"12    uefa
+Name: conf_cont, dtype: object";34;"19    uefa
+Name: conf_cont, dtype: object";34
+camaroes;10;holanda;29;"21    caf
+Name: conf_cont, dtype: object";29;"20    uefa
+Name: conf_cont, dtype: object";29
+dinamarca;19;japao;35;"8    uefa
+Name: conf_cont, dtype: object";35;"28    afc
+Name: conf_cont, dtype: object";35
+coreia_do_norte;14;costa_do_marfim;16;"30    afc
+Name: conf_cont, dtype: object";16;"25    caf
+Name: conf_cont, dtype: object";16
+portugal;45;brasil;9;"9    uefa
+Name: conf_cont, dtype: object";9;"0    conmebol
+Name: conf_cont, dtype: object";9
+chile;12;espanha;24;"1    conmebol
+Name: conf_cont, dtype: object";24;"15    uefa
+Name: conf_cont, dtype: object";24
+suica;52;honduras;30;"10    uefa
+Name: conf_cont, dtype: object";30;"7    concacaf
+Name: conf_cont, dtype: object";30
+uruguai;57;coreia_do_sul;15;"4    conmebol
+Name: conf_cont, dtype: object";15;"29    afc
+Name: conf_cont, dtype: object";15
+estados_unidos;25;gana;27;"5    concacaf
+Name: conf_cont, dtype: object";27;"24    caf
+Name: conf_cont, dtype: object";27
+alemanha;1;inglaterra;31;"14    uefa
+Name: conf_cont, dtype: object";31;"16    uefa
+Name: conf_cont, dtype: object";31
+argentina;5;mexico;37;"3    conmebol
+Name: conf_cont, dtype: object";37;"6    concacaf
+Name: conf_cont, dtype: object";37
+holanda;29;eslovaquia;22;"20    uefa
+Name: conf_cont, dtype: object";22;"12    uefa
+Name: conf_cont, dtype: object";22
+brasil;9;chile;12;"0    conmebol
+Name: conf_cont, dtype: object";12;"1    conmebol
+Name: conf_cont, dtype: object";12
+paraguai;42;japao;35;"2    conmebol
+Name: conf_cont, dtype: object";35;"28    afc
+Name: conf_cont, dtype: object";35
+espanha;24;portugal;45;"15    uefa
+Name: conf_cont, dtype: object";45;"9    uefa
+Name: conf_cont, dtype: object";45
+holanda;29;brasil;9;"20    uefa
+Name: conf_cont, dtype: object";9;"0    conmebol
+Name: conf_cont, dtype: object";9
+uruguai;57;gana;27;"4    conmebol
+Name: conf_cont, dtype: object";27;"24    caf
+Name: conf_cont, dtype: object";27
+argentina;5;alemanha;1;"3    conmebol
+Name: conf_cont, dtype: object";1;"14    uefa
+Name: conf_cont, dtype: object";1
+paraguai;42;espanha;24;"2    conmebol
+Name: conf_cont, dtype: object";24;"15    uefa
+Name: conf_cont, dtype: object";24
+uruguai;57;holanda;29;"4    conmebol
+Name: conf_cont, dtype: object";29;"20    uefa
+Name: conf_cont, dtype: object";29
+alemanha;1;espanha;24;"14    uefa
+Name: conf_cont, dtype: object";24;"15    uefa
+Name: conf_cont, dtype: object";24
+uruguai;57;alemanha;1;"4    conmebol
+Name: conf_cont, dtype: object";1;"14    uefa
+Name: conf_cont, dtype: object";1
+holanda;29;espanha;24;"20    uefa
+Name: conf_cont, dtype: object";24;"15    uefa
+Name: conf_cont, dtype: object";24
+brasil;9;croacia;18;"5    conmebol
+Name: conf_cont, dtype: object";18;"11    uefa
+Name: conf_cont, dtype: object";18
+mexico;37;camaroes;10;"9    concacaf
+Name: conf_cont, dtype: object";10;"27    caf
+Name: conf_cont, dtype: object";10
+espanha;24;holanda;29;"21    uefa
+Name: conf_cont, dtype: object";29;"14    uefa
+Name: conf_cont, dtype: object";29
+chile;12;australia;6;"2    conmebol
+Name: conf_cont, dtype: object";6;"31    afc
+Name: conf_cont, dtype: object";6
+colombia;13;grecia;28;"1    conmebol
+Name: conf_cont, dtype: object";28;"19    uefa
+Name: conf_cont, dtype: object";28
+uruguai;57;costa_rica;17;"4    conmebol
+Name: conf_cont, dtype: object";17;"7    concacaf
+Name: conf_cont, dtype: object";17
+inglaterra;31;italia;34;"20    uefa
+Name: conf_cont, dtype: object";34;"12    uefa
+Name: conf_cont, dtype: object";34
+costa_do_marfim;16;japao;35;"23    caf
+Name: conf_cont, dtype: object";35;"30    afc
+Name: conf_cont, dtype: object";35
+suica;52;equador;21;"15    uefa
+Name: conf_cont, dtype: object";21;"3    conmebol
+Name: conf_cont, dtype: object";21
+franca;26;honduras;30;"22    uefa
+Name: conf_cont, dtype: object";30;"8    concacaf
+Name: conf_cont, dtype: object";30
+argentina;5;bosnia_e_herzegovina;8;"0    conmebol
+Name: conf_cont, dtype: object";8;"18    uefa
+Name: conf_cont, dtype: object";8
+alemanha;1;portugal;45;"13    uefa
+Name: conf_cont, dtype: object";45;"17    uefa
+Name: conf_cont, dtype: object";45
+ira;32;nigeria;38;"28    afc
+Name: conf_cont, dtype: object";38;"25    caf
+Name: conf_cont, dtype: object";38
+gana;27;estados_unidos;25;"24    caf
+Name: conf_cont, dtype: object";25;"6    concacaf
+Name: conf_cont, dtype: object";25
+belgica;7;argelia;4;"10    uefa
+Name: conf_cont, dtype: object";4;"26    caf
+Name: conf_cont, dtype: object";4
+brasil;9;mexico;37;"5    conmebol
+Name: conf_cont, dtype: object";37;"9    concacaf
+Name: conf_cont, dtype: object";37
+russia;48;coreia_do_sul;15;"16    uefa
+Name: conf_cont, dtype: object";15;"29    afc
+Name: conf_cont, dtype: object";15
+australia;6;holanda;29;"31    afc
+Name: conf_cont, dtype: object";29;"14    uefa
+Name: conf_cont, dtype: object";29
+espanha;24;chile;12;"21    uefa
+Name: conf_cont, dtype: object";12;"2    conmebol
+Name: conf_cont, dtype: object";12
+camaroes;10;croacia;18;"27    caf
+Name: conf_cont, dtype: object";18;"11    uefa
+Name: conf_cont, dtype: object";18
+colombia;13;costa_do_marfim;16;"1    conmebol
+Name: conf_cont, dtype: object";16;"23    caf
+Name: conf_cont, dtype: object";16
+uruguai;57;inglaterra;31;"4    conmebol
+Name: conf_cont, dtype: object";31;"20    uefa
+Name: conf_cont, dtype: object";31
+japao;35;grecia;28;"30    afc
+Name: conf_cont, dtype: object";28;"19    uefa
+Name: conf_cont, dtype: object";28
+italia;34;costa_rica;17;"12    uefa
+Name: conf_cont, dtype: object";17;"7    concacaf
+Name: conf_cont, dtype: object";17
+suica;52;franca;26;"15    uefa
+Name: conf_cont, dtype: object";26;"22    uefa
+Name: conf_cont, dtype: object";26
+honduras;30;equador;21;"8    concacaf
+Name: conf_cont, dtype: object";21;"3    conmebol
+Name: conf_cont, dtype: object";21
+argentina;5;ira;32;"0    conmebol
+Name: conf_cont, dtype: object";32;"28    afc
+Name: conf_cont, dtype: object";32
+alemanha;1;gana;27;"13    uefa
+Name: conf_cont, dtype: object";27;"24    caf
+Name: conf_cont, dtype: object";27
+nigeria;38;bosnia_e_herzegovina;8;"25    caf
+Name: conf_cont, dtype: object";8;"18    uefa
+Name: conf_cont, dtype: object";8
+belgica;7;russia;48;"10    uefa
+Name: conf_cont, dtype: object";48;"16    uefa
+Name: conf_cont, dtype: object";48
+coreia_do_sul;15;argelia;4;"29    afc
+Name: conf_cont, dtype: object";4;"26    caf
+Name: conf_cont, dtype: object";4
+estados_unidos;25;portugal;45;"6    concacaf
+Name: conf_cont, dtype: object";45;"17    uefa
+Name: conf_cont, dtype: object";45
+australia;6;espanha;24;"31    afc
+Name: conf_cont, dtype: object";24;"21    uefa
+Name: conf_cont, dtype: object";24
+holanda;29;chile;12;"14    uefa
+Name: conf_cont, dtype: object";12;"2    conmebol
+Name: conf_cont, dtype: object";12
+camaroes;10;brasil;9;"27    caf
+Name: conf_cont, dtype: object";9;"5    conmebol
+Name: conf_cont, dtype: object";9
+croacia;18;mexico;37;"11    uefa
+Name: conf_cont, dtype: object";37;"9    concacaf
+Name: conf_cont, dtype: object";37
+costa_rica;17;inglaterra;31;"7    concacaf
+Name: conf_cont, dtype: object";31;"20    uefa
+Name: conf_cont, dtype: object";31
+italia;34;uruguai;57;"12    uefa
+Name: conf_cont, dtype: object";57;"4    conmebol
+Name: conf_cont, dtype: object";57
+japao;35;colombia;13;"30    afc
+Name: conf_cont, dtype: object";13;"1    conmebol
+Name: conf_cont, dtype: object";13
+grecia;28;costa_do_marfim;16;"19    uefa
+Name: conf_cont, dtype: object";16;"23    caf
+Name: conf_cont, dtype: object";16
+bosnia_e_herzegovina;8;ira;32;"18    uefa
+Name: conf_cont, dtype: object";32;"28    afc
+Name: conf_cont, dtype: object";32
+nigeria;38;argentina;5;"25    caf
+Name: conf_cont, dtype: object";5;"0    conmebol
+Name: conf_cont, dtype: object";5
+honduras;30;suica;52;"8    concacaf
+Name: conf_cont, dtype: object";52;"15    uefa
+Name: conf_cont, dtype: object";52
+equador;21;franca;26;"3    conmebol
+Name: conf_cont, dtype: object";26;"22    uefa
+Name: conf_cont, dtype: object";26
+portugal;45;gana;27;"17    uefa
+Name: conf_cont, dtype: object";27;"24    caf
+Name: conf_cont, dtype: object";27
+estados_unidos;25;alemanha;1;"6    concacaf
+Name: conf_cont, dtype: object";1;"13    uefa
+Name: conf_cont, dtype: object";1
+argelia;4;russia;48;"26    caf
+Name: conf_cont, dtype: object";48;"16    uefa
+Name: conf_cont, dtype: object";48
+coreia_do_sul;15;belgica;7;"29    afc
+Name: conf_cont, dtype: object";7;"10    uefa
+Name: conf_cont, dtype: object";7
+brasil;9;chile;12;"5    conmebol
+Name: conf_cont, dtype: object";12;"2    conmebol
+Name: conf_cont, dtype: object";12
+colombia;13;uruguai;57;"1    conmebol
+Name: conf_cont, dtype: object";57;"4    conmebol
+Name: conf_cont, dtype: object";57
+holanda;29;mexico;37;"14    uefa
+Name: conf_cont, dtype: object";37;"9    concacaf
+Name: conf_cont, dtype: object";37
+costa_rica;17;grecia;28;"7    concacaf
+Name: conf_cont, dtype: object";28;"19    uefa
+Name: conf_cont, dtype: object";28
+franca;26;nigeria;38;"22    uefa
+Name: conf_cont, dtype: object";38;"25    caf
+Name: conf_cont, dtype: object";38
+alemanha;1;argelia;4;"13    uefa
+Name: conf_cont, dtype: object";4;"26    caf
+Name: conf_cont, dtype: object";4
+argentina;5;suica;52;"0    conmebol
+Name: conf_cont, dtype: object";52;"15    uefa
+Name: conf_cont, dtype: object";52
+belgica;7;estados_unidos;25;"10    uefa
+Name: conf_cont, dtype: object";25;"6    concacaf
+Name: conf_cont, dtype: object";25
+franca;26;alemanha;1;"22    uefa
+Name: conf_cont, dtype: object";1;"13    uefa
+Name: conf_cont, dtype: object";1
+brasil;9;colombia;13;"5    conmebol
+Name: conf_cont, dtype: object";13;"1    conmebol
+Name: conf_cont, dtype: object";13
+argentina;5;belgica;7;"0    conmebol
+Name: conf_cont, dtype: object";7;"10    uefa
+Name: conf_cont, dtype: object";7
+holanda;29;costa_rica;17;"14    uefa
+Name: conf_cont, dtype: object";17;"7    concacaf
+Name: conf_cont, dtype: object";17
+brasil;9;alemanha;1;"5    conmebol
+Name: conf_cont, dtype: object";1;"13    uefa
+Name: conf_cont, dtype: object";1
+holanda;29;argentina;5;"14    uefa
+Name: conf_cont, dtype: object";5;"0    conmebol
+Name: conf_cont, dtype: object";5
+brasil;9;holanda;29;"5    conmebol
+Name: conf_cont, dtype: object";29;"14    uefa
+Name: conf_cont, dtype: object";29
+alemanha;1;argentina;5;"13    uefa
+Name: conf_cont, dtype: object";5;"0    conmebol
+Name: conf_cont, dtype: object";5
+russia;48;arabia_saudita;3;"21    uefa
+Name: conf_cont, dtype: object";3;"30    afc
+Name: conf_cont, dtype: object";3
+egito;20;uruguai;57;"26    caf
+Name: conf_cont, dtype: object";57;"1    conmebol
+Name: conf_cont, dtype: object";57
+marrocos;36;ira;32;"24    caf
+Name: conf_cont, dtype: object";32;"27    afc
+Name: conf_cont, dtype: object";32
+portugal;45;espanha;24;"10    uefa
+Name: conf_cont, dtype: object";24;"17    uefa
+Name: conf_cont, dtype: object";24
+franca;26;australia;6;"8    uefa
+Name: conf_cont, dtype: object";6;"31    afc
+Name: conf_cont, dtype: object";6
+argentina;5;islandia;33;"2    conmebol
+Name: conf_cont, dtype: object";33;"19    uefa
+Name: conf_cont, dtype: object";33
+peru;43;dinamarca;19;"4    conmebol
+Name: conf_cont, dtype: object";19;"15    uefa
+Name: conf_cont, dtype: object";19
+croacia;18;nigeria;38;"20    uefa
+Name: conf_cont, dtype: object";38;"23    caf
+Name: conf_cont, dtype: object";38
+costa_rica;17;servia;50;"6    concacaf
+Name: conf_cont, dtype: object";50;"13    uefa
+Name: conf_cont, dtype: object";50
+alemanha;1;mexico;37;"12    uefa
+Name: conf_cont, dtype: object";37;"5    concacaf
+Name: conf_cont, dtype: object";37
+brasil;9;suica;52;"0    conmebol
+Name: conf_cont, dtype: object";52;"11    uefa
+Name: conf_cont, dtype: object";52
+suecia;51;coreia_do_sul;15;"9    uefa
+Name: conf_cont, dtype: object";15;"28    afc
+Name: conf_cont, dtype: object";15
+belgica;7;panama;41;"18    uefa
+Name: conf_cont, dtype: object";41;"7    concacaf
+Name: conf_cont, dtype: object";41
+tunisia;55;inglaterra;31;"22    caf
+Name: conf_cont, dtype: object";31;"16    uefa
+Name: conf_cont, dtype: object";31
+colombia;13;japao;35;"3    conmebol
+Name: conf_cont, dtype: object";35;"29    afc
+Name: conf_cont, dtype: object";35
+polonia;44;senegal;49;"14    uefa
+Name: conf_cont, dtype: object";49;"25    caf
+Name: conf_cont, dtype: object";49
+russia;48;egito;20;"21    uefa
+Name: conf_cont, dtype: object";20;"26    caf
+Name: conf_cont, dtype: object";20
+portugal;45;marrocos;36;"10    uefa
+Name: conf_cont, dtype: object";36;"24    caf
+Name: conf_cont, dtype: object";36
+uruguai;57;arabia_saudita;3;"1    conmebol
+Name: conf_cont, dtype: object";3;"30    afc
+Name: conf_cont, dtype: object";3
+ira;32;espanha;24;"27    afc
+Name: conf_cont, dtype: object";24;"17    uefa
+Name: conf_cont, dtype: object";24
+dinamarca;19;australia;6;"15    uefa
+Name: conf_cont, dtype: object";6;"31    afc
+Name: conf_cont, dtype: object";6
+franca;26;peru;43;"8    uefa
+Name: conf_cont, dtype: object";43;"4    conmebol
+Name: conf_cont, dtype: object";43
+argentina;5;croacia;18;"2    conmebol
+Name: conf_cont, dtype: object";18;"20    uefa
+Name: conf_cont, dtype: object";18
+brasil;9;costa_rica;17;"0    conmebol
+Name: conf_cont, dtype: object";17;"6    concacaf
+Name: conf_cont, dtype: object";17
+nigeria;38;islandia;33;"23    caf
+Name: conf_cont, dtype: object";33;"19    uefa
+Name: conf_cont, dtype: object";33
+servia;50;suica;52;"13    uefa
+Name: conf_cont, dtype: object";52;"11    uefa
+Name: conf_cont, dtype: object";52
+belgica;7;tunisia;55;"18    uefa
+Name: conf_cont, dtype: object";55;"22    caf
+Name: conf_cont, dtype: object";55
+coreia_do_sul;15;mexico;37;"28    afc
+Name: conf_cont, dtype: object";37;"5    concacaf
+Name: conf_cont, dtype: object";37
+alemanha;1;suecia;51;"12    uefa
+Name: conf_cont, dtype: object";51;"9    uefa
+Name: conf_cont, dtype: object";51
+inglaterra;31;panama;41;"16    uefa
+Name: conf_cont, dtype: object";41;"7    concacaf
+Name: conf_cont, dtype: object";41
+japao;35;senegal;49;"29    afc
+Name: conf_cont, dtype: object";49;"25    caf
+Name: conf_cont, dtype: object";49
+polonia;44;colombia;13;"14    uefa
+Name: conf_cont, dtype: object";13;"3    conmebol
+Name: conf_cont, dtype: object";13
+arabia_saudita;3;egito;20;"30    afc
+Name: conf_cont, dtype: object";20;"26    caf
+Name: conf_cont, dtype: object";20
+uruguai;57;russia;48;"1    conmebol
+Name: conf_cont, dtype: object";48;"21    uefa
+Name: conf_cont, dtype: object";48
+espanha;24;marrocos;36;"17    uefa
+Name: conf_cont, dtype: object";36;"24    caf
+Name: conf_cont, dtype: object";36
+ira;32;portugal;45;"27    afc
+Name: conf_cont, dtype: object";45;"10    uefa
+Name: conf_cont, dtype: object";45
+australia;6;peru;43;"31    afc
+Name: conf_cont, dtype: object";43;"4    conmebol
+Name: conf_cont, dtype: object";43
+dinamarca;19;franca;26;"15    uefa
+Name: conf_cont, dtype: object";26;"8    uefa
+Name: conf_cont, dtype: object";26
+islandia;33;croacia;18;"19    uefa
+Name: conf_cont, dtype: object";18;"20    uefa
+Name: conf_cont, dtype: object";18
+nigeria;38;argentina;5;"23    caf
+Name: conf_cont, dtype: object";5;"2    conmebol
+Name: conf_cont, dtype: object";5
+coreia_do_sul;15;alemanha;1;"28    afc
+Name: conf_cont, dtype: object";1;"12    uefa
+Name: conf_cont, dtype: object";1
+mexico;37;suecia;51;"5    concacaf
+Name: conf_cont, dtype: object";51;"9    uefa
+Name: conf_cont, dtype: object";51
+servia;50;brasil;9;"13    uefa
+Name: conf_cont, dtype: object";9;"0    conmebol
+Name: conf_cont, dtype: object";9
+suica;52;costa_rica;17;"11    uefa
+Name: conf_cont, dtype: object";17;"6    concacaf
+Name: conf_cont, dtype: object";17
+japao;35;polonia;44;"29    afc
+Name: conf_cont, dtype: object";44;"14    uefa
+Name: conf_cont, dtype: object";44
+senegal;49;colombia;13;"25    caf
+Name: conf_cont, dtype: object";13;"3    conmebol
+Name: conf_cont, dtype: object";13
+inglaterra;31;belgica;7;"16    uefa
+Name: conf_cont, dtype: object";7;"18    uefa
+Name: conf_cont, dtype: object";7
+panama;41;tunisia;55;"7    concacaf
+Name: conf_cont, dtype: object";55;"22    caf
+Name: conf_cont, dtype: object";55
+franca;26;argentina;5;"8    uefa
+Name: conf_cont, dtype: object";5;"2    conmebol
+Name: conf_cont, dtype: object";5
+uruguai;57;portugal;45;"1    conmebol
+Name: conf_cont, dtype: object";45;"10    uefa
+Name: conf_cont, dtype: object";45
+espanha;24;russia;48;"17    uefa
+Name: conf_cont, dtype: object";48;"21    uefa
+Name: conf_cont, dtype: object";48
+croacia;18;dinamarca;19;"20    uefa
+Name: conf_cont, dtype: object";19;"15    uefa
+Name: conf_cont, dtype: object";19
+brasil;9;mexico;37;"0    conmebol
+Name: conf_cont, dtype: object";37;"5    concacaf
+Name: conf_cont, dtype: object";37
+belgica;7;japao;35;"18    uefa
+Name: conf_cont, dtype: object";35;"29    afc
+Name: conf_cont, dtype: object";35
+suecia;51;suica;52;"9    uefa
+Name: conf_cont, dtype: object";52;"11    uefa
+Name: conf_cont, dtype: object";52
+colombia;13;inglaterra;31;"3    conmebol
+Name: conf_cont, dtype: object";31;"16    uefa
+Name: conf_cont, dtype: object";31
+uruguai;57;franca;26;"1    conmebol
+Name: conf_cont, dtype: object";26;"8    uefa
+Name: conf_cont, dtype: object";26
+brasil;9;belgica;7;"0    conmebol
+Name: conf_cont, dtype: object";7;"18    uefa
+Name: conf_cont, dtype: object";7
+suecia;51;inglaterra;31;"9    uefa
+Name: conf_cont, dtype: object";31;"16    uefa
+Name: conf_cont, dtype: object";31
+russia;48;croacia;18;"21    uefa
+Name: conf_cont, dtype: object";18;"20    uefa
+Name: conf_cont, dtype: object";18
+franca;26;belgica;7;"8    uefa
+Name: conf_cont, dtype: object";7;"18    uefa
+Name: conf_cont, dtype: object";7
+croacia;18;inglaterra;31;"20    uefa
+Name: conf_cont, dtype: object";31;"16    uefa
+Name: conf_cont, dtype: object";31
+belgica;7;inglaterra;31;"18    uefa
+Name: conf_cont, dtype: object";31;"16    uefa
+Name: conf_cont, dtype: object";31
+franca;26;croacia;18;"8    uefa
+Name: conf_cont, dtype: object";18;"20    uefa
+Name: conf_cont, dtype: object";18
+qatar;46;equador;21;"31    afc
+Name: conf_cont, dtype: object";21;"3    conmebol
+Name: conf_cont, dtype: object";21
+inglaterra;31;ira;32;"18    uefa
+Name: conf_cont, dtype: object";32;"26    afc
+Name: conf_cont, dtype: object";32
+senegal;49;holanda;29;"24    caf
+Name: conf_cont, dtype: object";29;"16    uefa
+Name: conf_cont, dtype: object";29
+estados_unidos;25;pais_de_gales;40;"6    concacaf
+Name: conf_cont, dtype: object";40;"14    uefa
+Name: conf_cont, dtype: object";40
+argentina;5;arabia_saudita;3;"1    conmebol
+Name: conf_cont, dtype: object";3;"28    afc
+Name: conf_cont, dtype: object";3
+dinamarca;19;tunisia;55;"15    uefa
+Name: conf_cont, dtype: object";55;"21    caf
+Name: conf_cont, dtype: object";55
+mexico;37;polonia;44;"5    concacaf
+Name: conf_cont, dtype: object";44;"19    uefa
+Name: conf_cont, dtype: object";44
+franca;26;australia;6;"12    uefa
+Name: conf_cont, dtype: object";6;"30    afc
+Name: conf_cont, dtype: object";6
+marrocos;36;croacia;18;"25    caf
+Name: conf_cont, dtype: object";18;"17    uefa
+Name: conf_cont, dtype: object";18
+alemanha;1;japao;35;"20    uefa
+Name: conf_cont, dtype: object";35;"29    afc
+Name: conf_cont, dtype: object";35
+espanha;24;costa_rica;17;"10    uefa
+Name: conf_cont, dtype: object";17;"7    concacaf
+Name: conf_cont, dtype: object";17
+belgica;7;canada;11;"13    uefa
+Name: conf_cont, dtype: object";11;"4    concacaf
+Name: conf_cont, dtype: object";11
+suica;52;camaroes;10;"11    uefa
+Name: conf_cont, dtype: object";10;"22    caf
+Name: conf_cont, dtype: object";10
+uruguai;57;coreia_do_sul;15;"2    conmebol
+Name: conf_cont, dtype: object";15;"27    afc
+Name: conf_cont, dtype: object";15
+portugal;45;gana;27;"9    uefa
+Name: conf_cont, dtype: object";27;"23    caf
+Name: conf_cont, dtype: object";27
+brasil;9;servia;50;"0    conmebol
+Name: conf_cont, dtype: object";50;"8    uefa
+Name: conf_cont, dtype: object";50
+pais_de_gales;40;ira;32;"14    uefa
+Name: conf_cont, dtype: object";32;"26    afc
+Name: conf_cont, dtype: object";32
+qatar;46;senegal;49;"31    afc
+Name: conf_cont, dtype: object";49;"24    caf
+Name: conf_cont, dtype: object";49
+holanda;29;equador;21;"16    uefa
+Name: conf_cont, dtype: object";21;"3    conmebol
+Name: conf_cont, dtype: object";21
+inglaterra;31;estados_unidos;25;"18    uefa
+Name: conf_cont, dtype: object";25;"6    concacaf
+Name: conf_cont, dtype: object";25
+tunisia;55;australia;6;"21    caf
+Name: conf_cont, dtype: object";6;"30    afc
+Name: conf_cont, dtype: object";6
+polonia;44;arabia_saudita;3;"19    uefa
+Name: conf_cont, dtype: object";3;"28    afc
+Name: conf_cont, dtype: object";3
+franca;26;dinamarca;19;"12    uefa
+Name: conf_cont, dtype: object";19;"15    uefa
+Name: conf_cont, dtype: object";19
+argentina;5;mexico;37;"1    conmebol
+Name: conf_cont, dtype: object";37;"5    concacaf
+Name: conf_cont, dtype: object";37
+japao;35;costa_rica;17;"29    afc
+Name: conf_cont, dtype: object";17;"7    concacaf
+Name: conf_cont, dtype: object";17
+belgica;7;marrocos;36;"13    uefa
+Name: conf_cont, dtype: object";36;"25    caf
+Name: conf_cont, dtype: object";36
+croacia;18;canada;11;"17    uefa
+Name: conf_cont, dtype: object";11;"4    concacaf
+Name: conf_cont, dtype: object";11
+espanha;24;alemanha;1;"10    uefa
+Name: conf_cont, dtype: object";1;"20    uefa
+Name: conf_cont, dtype: object";1
+camaroes;10;servia;50;"22    caf
+Name: conf_cont, dtype: object";50;"8    uefa
+Name: conf_cont, dtype: object";50
+coreia_do_sul;15;gana;27;"27    afc
+Name: conf_cont, dtype: object";27;"23    caf
+Name: conf_cont, dtype: object";27
+brasil;9;suica;52;"0    conmebol
+Name: conf_cont, dtype: object";52;"11    uefa
+Name: conf_cont, dtype: object";52
+portugal;45;uruguai;57;"9    uefa
+Name: conf_cont, dtype: object";57;"2    conmebol
+Name: conf_cont, dtype: object";57
+equador;21;senegal;49;"3    conmebol
+Name: conf_cont, dtype: object";49;"24    caf
+Name: conf_cont, dtype: object";49
+holanda;29;qatar;46;"16    uefa
+Name: conf_cont, dtype: object";46;"31    afc
+Name: conf_cont, dtype: object";46
+ira;32;estados_unidos;25;"26    afc
+Name: conf_cont, dtype: object";25;"6    concacaf
+Name: conf_cont, dtype: object";25
+pais_de_gales;40;inglaterra;31;"14    uefa
+Name: conf_cont, dtype: object";31;"18    uefa
+Name: conf_cont, dtype: object";31
+tunisia;55;franca;26;"21    caf
+Name: conf_cont, dtype: object";26;"12    uefa
+Name: conf_cont, dtype: object";26
+australia;6;dinamarca;19;"30    afc
+Name: conf_cont, dtype: object";19;"15    uefa
+Name: conf_cont, dtype: object";19
+polonia;44;argentina;5;"19    uefa
+Name: conf_cont, dtype: object";5;"1    conmebol
+Name: conf_cont, dtype: object";5
+arabia_saudita;3;mexico;37;"28    afc
+Name: conf_cont, dtype: object";37;"5    concacaf
+Name: conf_cont, dtype: object";37
+croacia;18;belgica;7;"17    uefa
+Name: conf_cont, dtype: object";7;"13    uefa
+Name: conf_cont, dtype: object";7
+canada;11;marrocos;36;"4    concacaf
+Name: conf_cont, dtype: object";36;"25    caf
+Name: conf_cont, dtype: object";36
+japao;35;espanha;24;"29    afc
+Name: conf_cont, dtype: object";24;"10    uefa
+Name: conf_cont, dtype: object";24
+costa_rica;17;alemanha;1;"7    concacaf
+Name: conf_cont, dtype: object";1;"20    uefa
+Name: conf_cont, dtype: object";1
+coreia_do_sul;15;portugal;45;"27    afc
+Name: conf_cont, dtype: object";45;"9    uefa
+Name: conf_cont, dtype: object";45
+gana;27;uruguai;57;"23    caf
+Name: conf_cont, dtype: object";57;"2    conmebol
+Name: conf_cont, dtype: object";57
+servia;50;suica;52;"8    uefa
+Name: conf_cont, dtype: object";52;"11    uefa
+Name: conf_cont, dtype: object";52
+camaroes;10;brasil;9;"22    caf
+Name: conf_cont, dtype: object";9;"0    conmebol
+Name: conf_cont, dtype: object";9

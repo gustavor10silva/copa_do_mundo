@@ -79,5 +79,5 @@ for ano in anos:
 
 
 # fazendo o mesmo com o dataframe da copa de 2022
-df_jogos_2022 = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/2022/df_jogos.csv', sep=';')
+df_jogos_2022 = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/2022/df_jogos.csv', sep=',')
 df_jogos_2022.to_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/silver/2022/df_jogos_2022.csv', sep=';', index=False)

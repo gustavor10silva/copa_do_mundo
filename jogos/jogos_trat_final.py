@@ -1,7 +1,6 @@
-#%%
 # importando bibliotecas
 import pandas as pd
-
+from sklearn.preprocessing import LabelEncoder
 
 # criando o dataframe final vazio
 cols = [
@@ -30,7 +29,7 @@ df_copas = pd.DataFrame(columns=cols)
 # populando os dataframes finais de cada ano e concatenando em um único dataframe
 anos = ['2006', '2010', '2014', '2018', '2022']
 
-#%%
+
 for ano in anos:
     df_jogos = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_jogos_{ano}.csv', sep=';')
     df_stats = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_stats_{ano}.csv', sep=';')
@@ -48,37 +47,44 @@ for ano in anos:
                     lista_col = []
 
                     for selecao in df_jogos[f'{categoria}_team_name']:
-                        lista_col.append(int(df[df['selecao'] == selecao][col]))
-                    
+                        print(f'ano {ano} - categoria {categoria} - col {col} - selecao {selecao}')
+                        if col != 'conf_cont':
+                            lista_col.append(int(df[df['selecao'] == selecao][col]))
+                        else:
+                            lista_col.append(str(df[df['selecao'] == selecao][col]))
                     df_jogos[f'{categoria}_{col}'] = lista_col
     
     df_copas = pd.concat([df_copas, df_jogos], ignore_index=True)
 
 
+# fazendo o tratamento das colunas categoricas
+label_encoder_home = LabelEncoder()
+labels_selecoes_home = label_encoder_home.fit_transform(df_copas['home_team_name'])
+df_copas['home_team_label'] = labels_selecoes_home
+
+label_encoder_away = LabelEncoder()
+labels_selecoes_away = label_encoder_away.fit_transform(df_copas['away_team_name'])
+df_copas['away_team_label'] = labels_selecoes_away
+
+label_encoder_home_conf_cont = LabelEncoder()
+labels_home_conf_cont = label_encoder_home_conf_cont.fit_transform(df_copas['home_conf_cont'])
+df_copas['home_conf_cont_label'] = labels_selecoes_away
+
+label_encoder_away_conf_cont = LabelEncoder()
+labels_away_conf_cont = label_encoder_away_conf_cont.fit_transform(df_copas['away_conf_cont'])
+df_copas['away_conf_cont_label'] = labels_selecoes_away
+
+df_labels = df_copas[[
+    'home_team_name', 'home_team_label',
+    'away_team_name', 'away_team_label',
+    'home_conf_cont', 'home_conf_cont_label',
+    'away_conf_cont', 'away_conf_cont_label']]
+df_labels.to_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/gold/df_labels.csv', sep=';', index=False)
+
+
+# removendo as colunas categoricas, pois agora ja temos as colunas do encoding
+df_copas.drop(columns=['home_team_name', 'away_team_name', 'home_conf_cont', 'away_conf_cont'], inplace=True)
+
+
 # salvando o dataframe final
 df_copas.to_csv('C:/Users/Rustabo/Projetos/copa_do_mundo/gold/df_copas.csv', sep=';', index=False)
-
-
-
-#%%
-ano = '2022'
-df_jogos = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_jogos_{ano}.csv', sep=';')
-df_stats = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_stats_{ano}.csv', sep=';')
-df_elim = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_classif_{ano}.csv', sep=';')
-
-df_stats.info()
-# %%
-df_stats_silver = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/gold/{ano}/df_stats_{ano}.csv', sep=';')
-selecoes_31 = df_stats_silver['selecao'].value_counts().index
-#%%
-df_stats_silver = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/silver/{ano}/df_stats_{ano}.csv', sep=';')
-len(df_stats_silver['selecao'].unique())
-#%%
-df_stats_bronze = pd.read_csv(f'C:/Users/Rustabo/Projetos/copa_do_mundo/bronze/{ano}/df_stats.csv', sep=';')
-len(df_stats_bronze['selecao'].unique())
-#%%
-selecoes_31
-#%%
-df_elim.info()
-
-# %%

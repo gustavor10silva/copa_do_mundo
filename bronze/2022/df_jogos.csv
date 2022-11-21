@@ -2,7 +2,7 @@ home_team_name,away_team_name,grupo
 qatar,equador,a
 inglaterra,ira,b
 senegal,holanda,a
-estados_unidos,gales,b
+estados_unidos,pais_de_gales,b
 argentina,arabia_saudita,c
 dinamarca,tunisia,d
 mexico,polonia,c
@@ -15,7 +15,7 @@ suica,camaroes,g
 uruguai,coreia_do_sul,h
 portugal,gana,h
 brasil,servia,g
-gales,ira,b
+pais_de_gales,ira,b
 qatar,senegal,a
 holanda,equador,a
 inglaterra,estados_unidos,b
@@ -34,7 +34,7 @@ portugal,uruguai,h
 equador,senegal,a
 holanda,qatar,a
 ira,estados_unidos,b
-gales,inglaterra,b
+pais_de_gales,inglaterra,b
 tunisia,franca,d
 australia,dinamarca,d
 polonia,argentina,c
